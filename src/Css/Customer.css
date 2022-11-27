@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+.label{
+    -fx-font-family: 'Alexandria', sans-serif;
+    -fx-font-size: 20px;
+}
+.text-field{
+    -fx-background-color: transparent;
+    -fx-border-color:  #72C5D6;
+    -fx-border-width: 0px 0px 2px 0px;
+}

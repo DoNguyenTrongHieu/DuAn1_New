@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+#lblBakery{
+    -fx-font-family: 'Pacifico', cursive;
+    -fx-font-size: 48px;
+}
+.ButtonSideBar:hover{
+    -fx-background-color: #72C5D6;
+}
+.ButtonSideBar{
+    -fx-background-color: #6FBFB7;
+}
+.vboxLeft{
+    -fx-background-color: #6FBFB7;
+}
+.paneCenter{
+    -fx-background-color: #72D6B0;
+}

@@ -1,0 +1,14 @@
+.LoginButton{
+    -fx-background-color: #72C5D6;
+}
+.exitButton{
+    -fx-background-color: transparent;
+}
+#anchorPaneLeft{
+    -fx-background-color:  #6FBFB7;
+}
+.text-field_and_password-field{
+    -fx-background-color: transparent;
+    -fx-border-color:  #72C5D6;
+    -fx-border-width: 0px 0px 2px 0px;
+}
