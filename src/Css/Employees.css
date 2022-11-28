@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+.label{
+    -fx-font-family: 'Yeseva One', cursive;
+    -fx-font-size: 15px;
+}
+.text-field{
+    -fx-background-color: transparent;
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-color: #485751;
+}
+.button{
+    -fx-background-color: #485751;
+}
+.refeshButton{
+    -fx-background-color: transparent;
+}
+#paneContain{
+    -fx-background-color: #72D6B0;
+}
