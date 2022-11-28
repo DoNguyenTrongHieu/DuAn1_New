@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
@@ -17,15 +20,22 @@
             <TextField layoutX="61.0" layoutY="225.0" prefHeight="25.0" prefWidth="207.0" promptText="Support staff" stylesheets="@../Css/Customer.css" />
             <TableView layoutY="345.0" prefHeight="416.0" prefWidth="876.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
-                  <TableColumn prefWidth="75.0" text="Column X" />
+                <TableColumn prefWidth="113.59997713565826" text="Customer's code" />
+                <TableColumn prefWidth="170.39995574951172" text="Customer name" />
+                  <TableColumn prefWidth="164.800048828125" text="Staff code" />
+                  <TableColumn prefWidth="96.79995727539062" text="Bill code" />
+                  <TableColumn prefWidth="113.60003662109375" text="Phone number" />
+                  <TableColumn prefWidth="113.5999755859375" text="Total expenditure" />
+                  <TableColumn prefWidth="111.2000732421875" text="Purchases time" />
               </columns>
             </TableView>
+            <TextField layoutX="541.0" layoutY="297.0" prefHeight="25.0" prefWidth="207.0" promptText="Search" stylesheets="@../Css/Customer.css" />
+            <Button layoutX="810.0" layoutY="14.0" mnemonicParsing="false" styleClass="exitButton" stylesheets="@../Css/Customer.css" />
+            <ImageView fx:id="btnExit" fitHeight="32.0" fitWidth="32.0" layoutX="830.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Icon/reject.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

@@ -8,3 +8,6 @@
     -fx-border-color:  #72C5D6;
     -fx-border-width: 0px 0px 2px 0px;
 }
+.exitButton{
+    -fx-background-color: transparent;
+}
