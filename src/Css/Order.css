@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+.label{
+    -fx-font-family: 'Yeseva One', cursive;
+    -fx-font-size: 10px;
+}
+#paneContain{
+    -fx-background-color: #72D6B0;
+}.cartButton{
+     -fx-background-color: transparent;
+ }

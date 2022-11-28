@@ -1,13 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 .label{
-    -fx-font-family: 'Alexandria', sans-serif;
-    -fx-font-size: 20px;
+    -fx-font-family: 'Yeseva One', cursive;
+    -fx-font-size: 15px;
 }
 .text-field{
     -fx-background-color: transparent;
-    -fx-border-color:  #72C5D6;
+    -fx-border-color:  #485751;
     -fx-border-width: 0px 0px 2px 0px;
 }
 .exitButton{
     -fx-background-color: transparent;
+}
+#paneContain{
+    -fx-background-color: #72D6B0;
 }

@@ -27,15 +27,34 @@ public class Menu_Controller implements Initializable {
     BorderPane mainContain;
 
     @FXML
-    public void handleButtonAction(ActionEvent event){
+    public void handleButtonActionOrder(ActionEvent event){
         FXML_Loader ob = new FXML_Loader();
         Pane view = ob.getPage("Order");
         mainContain.setCenter(view);
     }
+
     @FXML
-    public void handleButtonAction2(ActionEvent event){
+    public void handleButtonActionCustomer(ActionEvent event){
         FXML_Loader ob = new FXML_Loader();
         Pane view = ob.getPage("Customer");
+        mainContain.setCenter(view);
+    }
+    @FXML
+    public void handleButtonActionAttendance(ActionEvent event){
+        FXML_Loader ob = new FXML_Loader();
+        Pane view = ob.getPage("Attendance");
+        mainContain.setCenter(view);
+    }
+    @FXML
+    public void handleButtonActionProduct(ActionEvent event){
+        FXML_Loader ob = new FXML_Loader();
+        Pane view = ob.getPage("Product");
+        mainContain.setCenter(view);
+    }
+    @FXML
+    public void handleButtonEctionemployees(ActionEvent event){
+        FXML_Loader ob = new FXML_Loader();
+        Pane view = ob.getPage("Employees");
         mainContain.setCenter(view);
     }
 

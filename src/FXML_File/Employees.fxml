@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Employees_Controller">
    <children>
       <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Employees.css">
          <children>
@@ -65,8 +65,8 @@
                </graphic>
             </Button>
             <Button layoutX="162.0" layoutY="388.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" stylesheets="@../Css/Employees.css" text="Edit" textFill="WHITE" />
-            <Button layoutX="229.0" layoutY="388.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" stylesheets="@../Css/Employees.css" text="Delete" textFill="WHITE" />
-            <Button fx:id="btnExit" layoutX="810.0" layoutY="14.0" mnemonicParsing="false" styleClass="refeshButton" stylesheets="@../Css/Employees.css">
+            <Button layoutX="229.0" layoutY="388.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="59.0" stylesheets="@../Css/Employees.css" text="Delete" textFill="WHITE" />
+            <Button fx:id="btnExit" layoutX="810.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" styleClass="refeshButton" stylesheets="@../Css/Employees.css">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>

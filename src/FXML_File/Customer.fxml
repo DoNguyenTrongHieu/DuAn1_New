@@ -10,30 +10,42 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Customer_Controller">
    <children>
-      <Pane prefHeight="760.0" prefWidth="876.0">
+      <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Customer.css">
          <children>
-            <Label layoutX="61.0" layoutY="47.0" stylesheets="@../Css/Customer.css" text="Tạo thành viên" />
-            <TextField layoutX="61.0" layoutY="118.0" prefHeight="25.0" prefWidth="207.0" promptText="Name" stylesheets="@../Css/Customer.css" />
-            <TextField layoutX="61.0" layoutY="172.0" prefHeight="25.0" prefWidth="207.0" promptText="Phone number" stylesheets="@../Css/Customer.css" />
-            <TextField layoutX="61.0" layoutY="225.0" prefHeight="25.0" prefWidth="207.0" promptText="Support staff" stylesheets="@../Css/Customer.css" />
+            <Label layoutX="389.0" layoutY="36.0" stylesheets="@../Css/Customer.css" text="Tạo thành viên" />
+            <TextField layoutX="55.0" layoutY="119.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
+            <TextField layoutX="55.0" layoutY="173.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
+            <TextField layoutX="55.0" layoutY="227.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
             <TableView layoutY="345.0" prefHeight="416.0" prefWidth="876.0">
               <columns>
-                <TableColumn prefWidth="113.59997713565826" text="Customer's code" />
-                <TableColumn prefWidth="170.39995574951172" text="Customer name" />
-                  <TableColumn prefWidth="164.800048828125" text="Staff code" />
-                  <TableColumn prefWidth="96.79995727539062" text="Bill code" />
-                  <TableColumn prefWidth="113.60003662109375" text="Phone number" />
-                  <TableColumn prefWidth="113.5999755859375" text="Total expenditure" />
-                  <TableColumn prefWidth="111.2000732421875" text="Purchases time" />
+                <TableColumn prefWidth="130.0" text="Customer's code" />
+                <TableColumn prefWidth="155.0" text="Customer name" />
+                  <TableColumn prefWidth="110.0" text="Staff code" />
+                  <TableColumn prefWidth="109.0" text="Bill code" />
+                  <TableColumn prefWidth="116.0" text="Phone number" />
+                  <TableColumn prefWidth="133.0" text="Total expenditure" />
+                  <TableColumn minWidth="0.0" prefWidth="122.0" text="Purchases time" />
               </columns>
             </TableView>
-            <TextField layoutX="541.0" layoutY="297.0" prefHeight="25.0" prefWidth="207.0" promptText="Search" stylesheets="@../Css/Customer.css" />
-            <Button layoutX="810.0" layoutY="14.0" mnemonicParsing="false" styleClass="exitButton" stylesheets="@../Css/Customer.css" />
-            <ImageView fx:id="btnExit" fitHeight="32.0" fitWidth="32.0" layoutX="830.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <TextField layoutX="541.0" layoutY="297.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
+            <Button layoutX="814.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="24.0" styleClass="exitButton" stylesheets="@../Css/Customer.css">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/exitblack.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Label layoutX="55.0" layoutY="98.0" stylesheets="@../Css/Customer.css" text="Name" />
+            <Label layoutX="55.0" layoutY="152.0" stylesheets="@../Css/Customer.css" text="Phone number" />
+            <Label layoutX="56.0" layoutY="206.0" stylesheets="@../Css/Customer.css" text="Staff support ID" />
+            <Label layoutX="541.0" layoutY="276.0" stylesheets="@../Css/Customer.css" text="Search" />
+            <Button layoutX="757.0" layoutY="295.0" mnemonicParsing="false" styleClass="exitButton" stylesheets="@../Css/Customer.css" />
+            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="753.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../Icon/reject.png" />
+                  <Image url="@../Icon/search.png" />
                </image>
             </ImageView>
          </children>

@@ -2,13 +2,11 @@ package Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
-public class Customer_Controller {
-    @FXML
-    Button btnExit;
+public class Attendance_Controller {
     @FXML
     public void exit(ActionEvent event){
         System.exit(0);
     }
+
 }

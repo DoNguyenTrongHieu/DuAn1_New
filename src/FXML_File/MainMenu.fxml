@@ -19,14 +19,15 @@
                      <children>
                         <Label id="lblBakery" layoutX="92.0" layoutY="26.0" stylesheets="@../Css/MainMenu.css" text="Bakery" />
                      </children></Pane>
-                  <Button mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="62.0" prefWidth="326.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Order">
+                  <Button mnemonicParsing="false" onAction="#handleButtonActionOrder" prefHeight="62.0" prefWidth="326.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Order">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin></Button>
-                  <Button layoutX="10.0" layoutY="131.0" mnemonicParsing="false" onAction="#handleButtonAction2" prefHeight="62.0" prefWidth="327.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Customer" />
-                  <Button layoutX="10.0" layoutY="193.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="326.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Attendance" />
-                  <Button layoutX="10.0" layoutY="255.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="325.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Product" />
-                  <Button layoutX="10.0" layoutY="317.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="325.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Product">
+                  <Button layoutX="10.0" layoutY="131.0" mnemonicParsing="false" onAction="#handleButtonActionCustomer" prefHeight="62.0" prefWidth="327.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Customer" />
+                  <Button layoutX="10.0" layoutY="193.0" mnemonicParsing="false" onAction="#handleButtonActionAttendance" prefHeight="62.0" prefWidth="326.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Attendance" />
+                  <Button layoutX="10.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleButtonActionProduct" prefHeight="62.0" prefWidth="325.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Product" />
+                  <Button mnemonicParsing="false" onAction="#handleButtonEctionemployees" prefHeight="62.0" prefWidth="325.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Employees" />
+                  <Button layoutX="10.0" layoutY="317.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="325.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Log out">
                      <VBox.margin>
                         <Insets top="299.0" />
                      </VBox.margin>
