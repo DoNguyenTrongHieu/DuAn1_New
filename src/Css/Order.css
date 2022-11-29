@@ -5,6 +5,13 @@
 }
 #paneContain{
     -fx-background-color: #72D6B0;
-}.cartButton{
+}
+.cartButton{
      -fx-background-color: transparent;
  }
+.cartButton:hover{
+    -fx-background-color: #B7DDCF;
+}
+.exit:hover{
+    -fx-background-color: #E0494E;
+}

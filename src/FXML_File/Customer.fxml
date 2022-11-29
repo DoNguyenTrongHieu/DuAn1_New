@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -18,26 +19,33 @@
             <TextField layoutX="55.0" layoutY="119.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
             <TextField layoutX="55.0" layoutY="173.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
             <TextField layoutX="55.0" layoutY="227.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
-            <TableView layoutY="345.0" prefHeight="416.0" prefWidth="876.0">
+            <TableView fx:id="tblModel" layoutY="345.0" prefHeight="416.0" prefWidth="876.0">
               <columns>
-                <TableColumn prefWidth="130.0" text="Customer's code" />
-                <TableColumn prefWidth="155.0" text="Customer name" />
-                  <TableColumn prefWidth="110.0" text="Staff code" />
-                  <TableColumn prefWidth="109.0" text="Bill code" />
-                  <TableColumn prefWidth="116.0" text="Phone number" />
-                  <TableColumn prefWidth="133.0" text="Total expenditure" />
-                  <TableColumn minWidth="0.0" prefWidth="122.0" text="Purchases time" />
+                <TableColumn fx:id="customerID" prefWidth="130.0" resizable="false" text="Customer's code" />
+                <TableColumn fx:id="customerName" prefWidth="155.0" resizable="false" text="Customer name" />
+                  <TableColumn fx:id="staffID" prefWidth="110.0" resizable="false" text="Staff code" />
+                  <TableColumn fx:id="billCode" prefWidth="109.0" resizable="false" text="Bill code" />
+                  <TableColumn fx:id="phoneNumber" prefWidth="116.0" resizable="false" text="Phone number" />
+                  <TableColumn fx:id="totalExpenditure" prefWidth="133.0" resizable="false" text="Total expenditure" />
+                  <TableColumn fx:id="purchasesTime" minWidth="0.0" prefWidth="122.0" resizable="false" text="Purchases time" />
               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
             </TableView>
             <TextField layoutX="541.0" layoutY="297.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
-            <Button layoutX="814.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="24.0" styleClass="exitButton" stylesheets="@../Css/Customer.css">
+            <Button layoutX="822.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="24.0" stylesheets="@../Css/Customer.css">
                <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Icon/exitblack.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+               <styleClass>
+                  <String fx:value="exitButton" />
+                  <String fx:value="exit" />
+               </styleClass></Button>
             <Label layoutX="55.0" layoutY="98.0" stylesheets="@../Css/Customer.css" text="Name" />
             <Label layoutX="55.0" layoutY="152.0" stylesheets="@../Css/Customer.css" text="Phone number" />
             <Label layoutX="56.0" layoutY="206.0" stylesheets="@../Css/Customer.css" text="Staff support ID" />

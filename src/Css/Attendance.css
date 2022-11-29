@@ -18,3 +18,6 @@
     -fx-background-color: #485751;
     -fx-border-radius: 5px;
 }
+.exit:hover{
+    -fx-background-color: #E0494E;
+}

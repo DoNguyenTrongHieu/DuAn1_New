@@ -17,3 +17,6 @@
 #paneContain{
     -fx-background-color: #72D6B0;
 }
+.exit:hover{
+    -fx-background-color: #E0494E;
+}
