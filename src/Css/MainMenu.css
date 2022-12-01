@@ -5,7 +5,9 @@
     -fx-font-size: 48px;
 }
 .ButtonSideBar:hover{
-    -fx-background-color: #72C5D6;
+    -fx-background-color: #91A9B8;
+    -fx-background-radius: 20px 0px 0px 20px;
+    -fx-border-radius: 20px 0px 0px 20px;
 }
 .ButtonSideBar{
     -fx-background-color: #6FBFB7;

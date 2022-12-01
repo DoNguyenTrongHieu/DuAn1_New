@@ -1,6 +1,6 @@
 package Controller;
 
-import DAO_Enity.Entity_Employees;
+import DAO_Enity.Employees_DAO;
 import JDBC_Controller.Connected_Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,25 +45,25 @@ public class Employees_Controller implements Initializable {
     @FXML
     private Button btnLamMoi;
     @FXML
-    private TableView<Entity_Employees> table;
+    private TableView<Employees_DAO> table;
     @FXML
-    private TableColumn<Entity_Employees, String> maNVColumn;
+    private TableColumn<Employees_DAO, String> maNVColumn;
     @FXML
-    private TableColumn<Entity_Employees, String> tenNVColumn;
+    private TableColumn<Employees_DAO, String> tenNVColumn;
     @FXML
-    private TableColumn<Entity_Employees, String> ngaysinhColumn;
+    private TableColumn<Employees_DAO, String> ngaysinhColumn;
     @FXML
-    private TableColumn<Entity_Employees, String> gioiTinhColumn;
+    private TableColumn<Employees_DAO, Boolean> gioiTinhColumn;
     @FXML
-    private TableColumn<Entity_Employees, String> maChamCongColumn;
+    private TableColumn<Employees_DAO, String> maChamCongColumn;
     @FXML
-    private TableColumn<Entity_Employees, String> maChucVuColumn;
+    private TableColumn<Employees_DAO, String> maChucVuColumn;
     @FXML
-    private TableColumn<Entity_Employees, String> emailColumn;
+    private TableColumn<Employees_DAO, String> emailColumn;
     @FXML
-    private TableColumn<Entity_Employees, String> sdtColumn;
+    private TableColumn<Employees_DAO, String> sdtColumn;
 
-    ObservableList<Entity_Employees> listM = FXCollections.observableArrayList();
+    ObservableList<Employees_DAO> listM = FXCollections.observableArrayList();
 
 
 
@@ -73,34 +73,35 @@ public class Employees_Controller implements Initializable {
         setCellTable();
     }
     public void setCellTable(){
-        maNVColumn.setCellValueFactory(new PropertyValueFactory<Entity_Employees, String>("maN"));
-        tenNVColumn.setCellValueFactory(new PropertyValueFactory<Entity_Employees, String>("tenNV"));
-        ngaysinhColumn.setCellValueFactory(new PropertyValueFactory<Entity_Employees, String>("ngaysinh"));
-        gioiTinhColumn.setCellValueFactory(new PropertyValueFactory<Entity_Employees, String>("gioitinh"));
-        maChamCongColumn.setCellValueFactory(new PropertyValueFactory<Entity_Employees, String>("machamcong"));
-        maChucVuColumn.setCellValueFactory(new PropertyValueFactory<Entity_Employees, String>("machucvu"));
-        emailColumn.setCellValueFactory(new PropertyValueFactory<Entity_Employees, String>("email"));
-        sdtColumn.setCellValueFactory(new PropertyValueFactory<Entity_Employees, String>("sdt"));
+        maNVColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("maNv"));
+        tenNVColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("hoTen"));
+        ngaysinhColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("ngaySinh"));
+        gioiTinhColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, Boolean>("gioiTinh"));
+        maChamCongColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("maChamCong"));
+        maChucVuColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("maChucVu"));
+        emailColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("email"));
+        sdtColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("soDienThoai"));
         table.setItems(listM);
         try {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
-            String sql = "select * from NhanVien";
+            String sql = "select MaNv,HoTen,NgaySinh,GioiTinh,MaChamCong,MaChucVu,Email,SoDienThoai from NhanVien";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()){
-                listM.add(new Entity_Employees(
+                listM.add(new Employees_DAO(
                         rs.getString("maNV"),
-                        rs.getString("tenNV"),
+                        rs.getString("HoTen"),
                         rs.getString("ngaysinh"),
-                        rs.getString("gioitinh"),
+                        rs.getBoolean("gioitinh"),
                         rs.getString("machamcong"),
                         rs.getString("machucvu"),
                         rs.getString("email"),
-                        rs.getString("sdt")));
+                        rs.getString("soDienThoai")));
             }
             table.setItems(listM);
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }
