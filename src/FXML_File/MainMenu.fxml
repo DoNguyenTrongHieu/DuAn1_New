@@ -83,7 +83,7 @@
                      <font>
                         <Font name="Tahoma Bold" size="15.0" />
                      </font></Button>
-                  <Button alignment="CENTER" layoutX="10.0" layoutY="317.0" mnemonicParsing="false" prefHeight="62.0" prefWidth="325.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Log out">
+                  <Button fx:id="btnLogOut" alignment="CENTER" layoutX="10.0" layoutY="317.0" mnemonicParsing="false" onAction="#setBtnLogOut" prefHeight="62.0" prefWidth="325.0" styleClass="ButtonSideBar" stylesheets="@../Css/MainMenu.css" text="Log out">
                      <VBox.margin>
                         <Insets top="299.0" />
                      </VBox.margin>

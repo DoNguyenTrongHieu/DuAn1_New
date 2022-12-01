@@ -1,17 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 .label{
     -fx-font-family: 'Yeseva One', cursive;
-    -fx-font-size: 10px;
+    -fx-font-size: 15px;
 }
 #paneContain{
     -fx-background-color: #D0F2F2;
 }
-.cartButton{
-     -fx-background-color: transparent;
- }
-.cartButton:hover{
-    -fx-background-color: #B7DDCF;
-}
 .exit:hover{
-    -fx-background-color: #E0494E;
+     -fx-background-color: #E0494E;
+ }
+.exitButton{
+    -fx-background-color: transparent;
 }

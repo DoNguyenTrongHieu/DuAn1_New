@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Order_Controller">
+<AnchorPane fx:id="acPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Order_Controller">
    <children>
       <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Order.css">
          <children>
             <Pane layoutX="73.0" layoutY="116.0" prefHeight="160.0" prefWidth="204.0">
                <children>
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
-                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="103.0" fitWidth="183.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Icon/banh.jpg" />
                      </image>
@@ -37,13 +37,13 @@
             <Pane layoutX="350.0" layoutY="116.0" prefHeight="160.0" prefWidth="204.0">
                <children>
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
-                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="103.0" fitWidth="183.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icon/banh.jpg" />
+                        <Image url="@../Icon/banh-tiramisu.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
-                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh gato" />
+                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="250,000vnd" />
+                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh Tiramisu" />
                   <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -58,13 +58,13 @@
             <Pane layoutX="610.0" layoutY="116.0" prefHeight="160.0" prefWidth="204.0">
                <children>
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
-                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="25.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icon/banh.jpg" />
+                        <Image url="@../Icon/banh-kem-bap.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
-                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh gato" />
+                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="200,000vnd" />
+                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh kem bắp" />
                   <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -81,11 +81,11 @@
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
                   <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icon/banh.jpg" />
+                        <Image url="@../Icon/banh%20pia.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
-                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh gato" />
+                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="240,000vnd" />
+                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh pía" />
                   <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -97,7 +97,7 @@
                   </Button>
                </children>
             </Pane>
-            <Button contentDisplay="CENTER" layoutX="766.0" layoutY="60.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="29.0" styleClass="cartButton" stylesheets="@../Css/Order.css">
+            <Button fx:id="btnGoToPay" contentDisplay="CENTER" layoutX="766.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleButtonActionPay" prefHeight="40.0" prefWidth="29.0" styleClass="cartButton" stylesheets="@../Css/Order.css">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -109,13 +109,13 @@
             <Pane layoutX="350.0" layoutY="311.0" prefHeight="160.0" prefWidth="204.0">
                <children>
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
-                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icon/banh.jpg" />
+                        <Image url="@../Icon/banh-mousse-chanh-day.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
-                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh gato" />
+                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="250,000vnd" />
+                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh mousse" />
                   <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -132,11 +132,11 @@
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
                   <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icon/banh.jpg" />
+                        <Image url="@../Icon/Cheesecake.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
-                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh gato" />
+                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="280,000vnd" />
+                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Cheesecake" />
                   <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -153,11 +153,11 @@
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
                   <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icon/banh.jpg" />
+                        <Image url="@../Icon/cong-thuc-lam-banh-bong-lan-flan-sieu-don-gian-202201051715201863.jpg" />
                      </image>
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
-                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh gato" />
+                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Flan gato" />
                   <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -172,13 +172,13 @@
             <Pane layoutX="350.0" layoutY="502.0" prefHeight="160.0" prefWidth="204.0">
                <children>
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
-                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icon/banh.jpg" />
+                        <Image url="@../Icon/banh-crepe-ngan-lop-tra-xanh.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
-                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh gato" />
+                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="350,000vnd" />
+                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh crepe ngàn lớp" />
                   <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -193,13 +193,13 @@
             <Pane layoutX="610.0" layoutY="502.0" prefHeight="160.0" prefWidth="204.0">
                <children>
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
-                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="13.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Icon/banh.jpg" />
+                        <Image url="@../Icon/cách-làm-cupcake-kem-tươi-banner.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
-                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh gato" />
+                  <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="250,000vnd" />
+                  <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh cupcake" />
                   <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">

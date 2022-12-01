@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="anchorPane" fx:controller="Controller.Pay_Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Pay.css">
+         <children>
+            <Button layoutX="822.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" stylesheets="@../Css/Pay.css">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icon/exitblack.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="exitButton" />
+                  <String fx:value="exit" />
+               </styleClass>
+            </Button>
+            <TextArea layoutX="14.0" layoutY="46.0" prefHeight="533.0" prefWidth="230.0" />
+            <Label layoutX="275.0" layoutY="168.0" stylesheets="@../Css/Pay.css" text="Nhân viên hỗ trợ" />
+            <TextField layoutX="486.0" layoutY="166.0" prefHeight="25.0" prefWidth="312.0" />
+            <Label layoutX="275.0" layoutY="234.0" stylesheets="@../Css/Pay.css" text="Tổng tiền" />
+            <TextField layoutX="486.0" layoutY="232.0" prefHeight="25.0" prefWidth="312.0" />
+            <Label layoutX="275.0" layoutY="316.0" stylesheets="@../Css/Pay.css" text="Tiền khách đưa" />
+            <TextField layoutX="486.0" layoutY="314.0" prefHeight="25.0" prefWidth="312.0" />
+            <Button layoutX="611.0" layoutY="368.0" mnemonicParsing="false" text="Thanh toán" />
+            <Label layoutX="275.0" layoutY="431.0" stylesheets="@../Css/Pay.css" text="Tiền thừa" />
+            <TextField layoutX="486.0" layoutY="429.0" prefHeight="25.0" prefWidth="312.0" />
+            <Button layoutX="618.0" layoutY="483.0" mnemonicParsing="false" text="Hoàn tất" />
+            <Button layoutX="738.0" layoutY="660.0" mnemonicParsing="false" onAction="#backToOrder" text="Quay lại" />
+            <TextField layoutX="486.0" layoutY="91.0" prefHeight="25.0" prefWidth="312.0" />
+            <Label layoutX="275.0" layoutY="93.0" stylesheets="@../Css/Pay.css" text="Số điện thoại khách hàng" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -17,15 +17,6 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("../Css/Login.css").toExternalForm());
         primaryStage.initStyle(StageStyle.DECORATED.UNDECORATED);
-//        root.setOnMousePressed(event -> {
-//            x = event.getSceneX();
-//            y = event.getSceneY();
-//        });
-//        root.setOnMouseDragged(event -> {
-//            primaryStage.setX(event.getSceneX() - x);
-//            primaryStage.setY(event.getSceneX() - y);
-//
-//        });
         primaryStage.setScene(scene);
         primaryStage.show();
 
