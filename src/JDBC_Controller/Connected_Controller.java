@@ -1,24 +1,24 @@
 package JDBC_Controller;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class Connected_Controller {
-    private static Connection connectionLink;
+    public Connection connectionLink;
 
 
-    public static Connection getConnection() {
-        String serverName = "KHOALE\\SQLEXPRESS";
+    public Connection getConnection(){
+        String serverName = "NEKOY";
         String databaseName = "QuanLyTiemBanh";
-        String databaseUsername = "wibu";
-        String databasePassword = "123456";
+        String databaseUsername = "sa";
+        String databasePassword = "123";
         String url = "jdbc:sqlserver://" + serverName + ":1433;DatabaseName=" + databaseName + ";encrypt=true;trustServerCertificate=true";
 
         try {
-            connectionLink = DriverManager.getConnection(url, databaseUsername, databasePassword);
-        } catch (Exception e) {
+            connectionLink = DriverManager.getConnection(url,databaseUsername,databasePassword);
+        }catch (Exception e){
             e.printStackTrace();
         }
         return connectionLink;
     }
-
 }
