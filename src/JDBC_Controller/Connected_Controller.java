@@ -8,10 +8,10 @@ public class Connected_Controller {
 
 
     public Connection getConnection(){
-        String serverName = "TRONGHIEU";
+        String serverName = "NEKOY";
         String databaseName = "QuanLyTiemBanh";
         String databaseUsername = "sa";
-        String databasePassword = "1234";
+        String databasePassword = "123";
         String url = "jdbc:sqlserver://" + serverName + ":1433;DatabaseName=" + databaseName + ";encrypt=true;trustServerCertificate=true";
 
         try {
