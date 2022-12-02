@@ -29,14 +29,14 @@
                </styleClass>
             </Button>
             <Label id="labelTitle" layoutX="378.0" layoutY="30.0" stylesheets="@../Css/Attendance.css" text="Product" />
-            <TableView layoutY="463.0" prefHeight="298.0" prefWidth="876.0">
+            <TableView fx:id="tblModel" layoutY="463.0" prefHeight="298.0" prefWidth="876.0">
               <columns>
-                <TableColumn prefWidth="114.0" resizable="false" text="Product ID" />
-                <TableColumn prefWidth="274.0" resizable="false" text="Produict name" />
-                  <TableColumn minWidth="0.0" prefWidth="145.0" resizable="false" text="Import date" />
-                  <TableColumn prefWidth="143.0" resizable="false" text="Expiration date" />
-                  <TableColumn prefWidth="79.0" resizable="false" text="Amount" />
-                  <TableColumn prefWidth="120.0" resizable="false" text="Unit price" />
+                <TableColumn fx:id="ProductID" prefWidth="114.0" resizable="false" text="Product ID" />
+                <TableColumn fx:id="Productname" prefWidth="274.0" resizable="false" text="Product name" />
+                  <TableColumn fx:id="Importdate" minWidth="0.0" prefWidth="145.0" resizable="false" text="Import date" />
+                  <TableColumn fx:id="Expirationdate" prefWidth="143.0" resizable="false" text="Expiration date" />
+                  <TableColumn fx:id="Amount" prefWidth="79.0" resizable="false" text="Amount" />
+                  <TableColumn fx:id="Unitprice" prefWidth="120.0" resizable="false" text="Unit price" />
               </columns>
             </TableView>
             <Label layoutX="54.0" layoutY="81.0" stylesheets="@../Css/Product.css" text="Product Id" />

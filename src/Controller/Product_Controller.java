@@ -38,7 +38,7 @@ public class Product_Controller implements Initializable {
     private TableColumn<product_DAO, String> ProductID;
 
     @FXML
-    private TableColumn<product_DAO, String> Produictname;
+    private TableColumn<product_DAO, String> Productname;
 
     @FXML
     private TableColumn<product_DAO, String> Importdate;
@@ -58,7 +58,7 @@ public class Product_Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ProductID.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("MaSamPham"));
-        Produictname.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("TenSanpham"));
+        Productname.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("TenSanpham"));
         Importdate.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("Ngaynhaphang"));
         Expirationdate.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("Ngayhethan"));
         Amount.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("SoLuong"));
