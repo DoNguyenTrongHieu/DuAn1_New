@@ -1,14 +1,25 @@
 .LoginButton{
-    -fx-background-color: #72C5D6;
+    -fx-background-color: #DE3A5D;
 }
 .exitButton{
     -fx-background-color: transparent;
 }
 #anchorPaneLeft{
-    -fx-background-color:  #6FBFB7;
+    -fx-background-color:  #D03658;
+}
+#anchorPaneRight{
+    -fx-background-color: #91263D;
 }
 .text-field_and_password-field{
     -fx-background-color: transparent;
-    -fx-border-color:  #72C5D6;
+    -fx-border-color:  #c9a6ae;
     -fx-border-width: 0px 0px 2px 0px;
+    -fx-text-fill: #c9a6ae;
 }
+
+
+
+
+
+
+

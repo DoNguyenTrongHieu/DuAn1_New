@@ -4,7 +4,6 @@ public class Customer_DAO {
     private String maKhachHang;
     private String tenKhachHang;
     private String maNhanVienHoTro;
-    private String maHoaDon;
     private String soDienThoai;
     private Float tongTienDaChi;
     private int soLanMuaHang;
@@ -12,11 +11,10 @@ public class Customer_DAO {
     public Customer_DAO() {
     }
 
-    public Customer_DAO(String maKhachHang, String tenKhachHang, String maNhanVienHoTro, String maHoaDon, String soDienThoai, Float tongTienDaChi, int soLanMuaHang) {
+    public Customer_DAO(String maKhachHang, String tenKhachHang, String maNhanVienHoTro, String soDienThoai, Float tongTienDaChi, int soLanMuaHang) {
         this.maKhachHang = maKhachHang;
         this.tenKhachHang = tenKhachHang;
         this.maNhanVienHoTro = maNhanVienHoTro;
-        this.maHoaDon = maHoaDon;
         this.soDienThoai = soDienThoai;
         this.tongTienDaChi = tongTienDaChi;
         this.soLanMuaHang = soLanMuaHang;
@@ -44,14 +42,6 @@ public class Customer_DAO {
 
     public void setMaNhanVienHoTro(String maNhanVienHoTro) {
         this.maNhanVienHoTro = maNhanVienHoTro;
-    }
-
-    public String getMaHoaDon() {
-        return maHoaDon;
-    }
-
-    public void setMaHoaDon(String maHoaDon) {
-        this.maHoaDon = maHoaDon;
     }
 
     public String getSoDienThoai() {
