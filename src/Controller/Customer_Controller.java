@@ -7,10 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -18,6 +15,9 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class Customer_Controller implements Initializable {
+
+    @FXML
+    Label lblThongBao;
 
     @FXML
     TextField txtName, txtPhoneNumber, txtStaffID;
@@ -119,32 +119,37 @@ public class Customer_Controller implements Initializable {
 //    }
 
     public void insertValueCustomer() {
-        String sql = "INSERT INTO KHACHHANG VALUES ('',N'" + txtName.getText() + "','" + txtStaffID.getText().toUpperCase() + "'," + "null,'" + txtPhoneNumber.getText() + "'," + "null," + "null," + "1)";
-        executeQuery(sql);
-        System.out.println("them thanh cong");
-        list.clear();
-        try {
-            Connected_Controller connected_controller = new Connected_Controller();
-            Connection connection1 = connected_controller.getConnection();
+        if(validate() == true){
+            String sql = "INSERT INTO KHACHHANG VALUES ('',N'" + txtName.getText() + "','" + txtStaffID.getText().toUpperCase() + "'," + "null,'" + txtPhoneNumber.getText() + "'," + "null," + "null," + "1)";
+            executeQuery(sql);
+            System.out.println("them thanh cong");
+            list.clear();
+            try {
+                Connected_Controller connected_controller = new Connected_Controller();
+                Connection connection1 = connected_controller.getConnection();
 
-            String query = "SELECT MaKhachHang,TenKhachHang,MaNhanVienHoTro,SoDienThoai,TongTienDaChi,SoLanMuaHang FROM KhachHang where isDeleted=1 ";
-            Statement statement = connection1.createStatement();
-            ResultSet rs = statement.executeQuery(query);
-            while (rs.next()) {
-                list.add(new Customer_DAO(
-                        rs.getString("MaKhachHang"),
-                        rs.getString("TenKhachHang"),
-                        rs.getString("MaNhanVienHoTro"),
-                        rs.getString("SoDienThoai"),
-                        rs.getFloat(String.valueOf("TongTienDaChi")),
-                        rs.getInt("SoLanMuaHang")));
+                String query = "SELECT MaKhachHang,TenKhachHang,MaNhanVienHoTro,SoDienThoai,TongTienDaChi,SoLanMuaHang FROM KhachHang where isDeleted=1 ";
+                Statement statement = connection1.createStatement();
+                ResultSet rs = statement.executeQuery(query);
+                while (rs.next()) {
+                    list.add(new Customer_DAO(
+                            rs.getString("MaKhachHang"),
+                            rs.getString("TenKhachHang"),
+                            rs.getString("MaNhanVienHoTro"),
+                            rs.getString("SoDienThoai"),
+                            rs.getFloat(String.valueOf("TongTienDaChi")),
+                            rs.getInt("SoLanMuaHang")));
+                }
+                tblModel.setItems(list);
+                lblThongBao.setText("Tạo thành viên thành công");
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            tblModel.setItems(list);
-        } catch (Exception e) {
-
+        }else{
+            lblThongBao.setText("Tạo thành viên thất bại");
         }
-    }
 
+    }
     public void executeQuery(String query) {
         Connected_Controller connected_controller = new Connected_Controller();
         Connection con = connected_controller.getConnection();
@@ -155,5 +160,27 @@ public class Customer_Controller implements Initializable {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+    public boolean numberValidate(String str){
+        return str.matches("(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})\\b");
+    }
+    public boolean validate(){
+        int testPhoneNumber;
+        if(txtName.getText().trim().equalsIgnoreCase("")){
+            lblThongBao.setText("Không được bỏ trống tên khách hàng");
+            return false;
+        }
+        if(txtPhoneNumber.getText().trim().equalsIgnoreCase("")){
+            lblThongBao.setText("Không được bỏ trống số điện thoại");
+            return false;
+        }
+        if(numberValidate(txtPhoneNumber.getText()) == false){
+            return false;
+        }
+        if(txtStaffID.getText().trim().equalsIgnoreCase("")){
+            lblThongBao.setText("Không được bỏ trống mã nhân viên");
+            return false;
+        }
+        return true;
     }
 }

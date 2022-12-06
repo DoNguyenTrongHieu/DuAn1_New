@@ -51,7 +51,7 @@ public class Login_Controller{
                 stage.setScene(this.scene);
                 stage.centerOnScreen();
                 stage.setResizable(false);
-                stage.setFullScreen(true);
+//                stage.setFullScreen(true);
                 stage.show();
             }
         }
