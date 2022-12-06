@@ -58,7 +58,7 @@
             <Button fx:id="btnAdd" layoutX="119.0" layoutY="312.0" mnemonicParsing="false" onAction="#insertValueCustomer" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Add" />
             <Label fx:id="lblThongBao" layoutX="55.0" layoutY="276.0" prefHeight="21.0" prefWidth="294.0" />
             <Button layoutX="349.0" layoutY="134.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Edit" />
-            <Button layoutX="349.0" layoutY="188.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Delete" />
+            <Button layoutX="349.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Delete" />
          </children>
       </Pane>
    </children>

@@ -120,7 +120,7 @@ public class Customer_Controller implements Initializable {
 
     public void insertValueCustomer() {
         if(validate() == true){
-            String sql = "INSERT INTO KHACHHANG VALUES ('',N'" + txtName.getText() + "','" + txtStaffID.getText().toUpperCase() + "'," + "null,'" + txtPhoneNumber.getText() + "'," + "null," + "null," + "1)";
+            String sql = "INSERT INTO KHACHHANG VALUES ('',N'" + txtName.getText() + "','" + txtStaffID.getText().toUpperCase() + "'," + "null,'" + txtPhoneNumber.getText() + "'," + "null," + "null," + "2)";
             executeQuery(sql);
             System.out.println("them thanh cong");
             list.clear();
@@ -128,7 +128,7 @@ public class Customer_Controller implements Initializable {
                 Connected_Controller connected_controller = new Connected_Controller();
                 Connection connection1 = connected_controller.getConnection();
 
-                String query = "SELECT MaKhachHang,TenKhachHang,MaNhanVienHoTro,SoDienThoai,TongTienDaChi,SoLanMuaHang FROM KhachHang where isDeleted=1 ";
+                String query = "SELECT MaKhachHang,TenKhachHang,MaNhanVienHoTro,SoDienThoai,TongTienDaChi,SoLanMuaHang FROM KhachHang where isDeleted=2 ";
                 Statement statement = connection1.createStatement();
                 ResultSet rs = statement.executeQuery(query);
                 while (rs.next()) {
@@ -143,7 +143,7 @@ public class Customer_Controller implements Initializable {
                 tblModel.setItems(list);
                 lblThongBao.setText("Tạo thành viên thành công");
             } catch (Exception e) {
-                e.printStackTrace();
+                lblThongBao.setText("Tạo thành viên thất bại");
             }
         }else{
             lblThongBao.setText("Tạo thành viên thất bại");
@@ -165,7 +165,6 @@ public class Customer_Controller implements Initializable {
         return str.matches("(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})\\b");
     }
     public boolean validate(){
-        int testPhoneNumber;
         if(txtName.getText().trim().equalsIgnoreCase("")){
             lblThongBao.setText("Không được bỏ trống tên khách hàng");
             return false;
@@ -182,5 +181,32 @@ public class Customer_Controller implements Initializable {
             return false;
         }
         return true;
+    }
+    @FXML
+    public void deleteData() {
+        String sql = "UPDATE KHACHHANG SET isDeleted = 3 where soDienThoai = '" + txtPhoneNumber.getText() + "'";
+        executeQuery(sql);
+        lblThongBao.setText("Xóa thành công");
+        list.clear();
+        try {
+            Connected_Controller connected_controller = new Connected_Controller();
+            Connection connection1 = connected_controller.getConnection();
+
+            String query = "SELECT MaKhachHang,TenKhachHang,MaNhanVienHoTro,SoDienThoai,TongTienDaChi,SoLanMuaHang FROM KhachHang where isDeleted=2 ";
+            Statement statement = connection1.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()) {
+                list.add(new Customer_DAO(
+                        rs.getString("MaKhachHang"),
+                        rs.getString("TenKhachHang"),
+                        rs.getString("MaNhanVienHoTro"),
+                        rs.getString("SoDienThoai"),
+                        rs.getFloat(String.valueOf("TongTienDaChi")),
+                        rs.getInt("SoLanMuaHang")));
+            }
+            tblModel.setItems(list);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }
