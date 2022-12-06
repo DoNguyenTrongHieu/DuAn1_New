@@ -63,7 +63,7 @@ public class Customer_Controller implements Initializable {
         showListCustomer();
         // loadTable();
     }
-
+// show dữ liệu
     public void showListCustomer() {
         //cái này ko biết để tìm hiểu sau chạy là được
         customerID.setCellValueFactory(new PropertyValueFactory<Customer_DAO, String>("maKhachHang"));
