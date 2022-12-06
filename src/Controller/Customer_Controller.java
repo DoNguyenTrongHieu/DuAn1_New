@@ -119,7 +119,7 @@ public class Customer_Controller implements Initializable {
 //
 //        }
 //    }
-
+    // insert data
     public void insertValueCustomer() {
         if(validate() == true){
             String sql = "INSERT INTO KHACHHANG VALUES ('',N'" + txtName.getText() + "','" + txtStaffID.getText().toUpperCase() + "'," + "null,'" + txtPhoneNumber.getText() + "'," + "null," + "null," + "2)";
@@ -152,6 +152,7 @@ public class Customer_Controller implements Initializable {
         }
 
     }
+    // thực hiện query data
     public void executeQuery(String query) {
         Connected_Controller connected_controller = new Connected_Controller();
         Connection con = connected_controller.getConnection();
@@ -163,9 +164,11 @@ public class Customer_Controller implements Initializable {
             ex.printStackTrace();
         }
     }
+    // validate số điện thoại
     public boolean numberValidate(String str){
         return str.matches("(((\\+|)84)|0)(3|5|7|8|9)+([0-9]{8})\\b");
     }
+    //validate dữ liệu nhập vào
     public boolean validate(){
         if(txtName.getText().trim().equalsIgnoreCase("")){
             lblThongBao.setText("Không được bỏ trống tên khách hàng");
@@ -185,6 +188,7 @@ public class Customer_Controller implements Initializable {
         return true;
     }
     @FXML
+    // xóa dữ liệu trong bảng
     public void deleteData() {
         String sql = "UPDATE KHACHHANG SET isDeleted = 3 where makhachhang = '" + txtMaKhachHang.getText() + "'";
         executeQuery(sql);
@@ -211,6 +215,7 @@ public class Customer_Controller implements Initializable {
             ex.printStackTrace();
         }
     }
+    // fill dữ liệu được chọn lên textfield
     public void selectedID(){
         Customer_DAO customer_dao = tblModel.getSelectionModel().getSelectedItem();
         txtMaKhachHang.setText(customer_dao.getMaKhachHang());
