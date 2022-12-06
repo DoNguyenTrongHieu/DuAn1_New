@@ -21,6 +21,8 @@ public class Customer_Controller implements Initializable {
 
     @FXML
     TextField txtName, txtPhoneNumber, txtStaffID;
+    @FXML
+    TextField txtMaKhachHang;
 
     @FXML
     Button btnExit;
@@ -76,7 +78,7 @@ public class Customer_Controller implements Initializable {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
 
-            String sql = "SELECT MaKhachHang,TenKhachHang,MaNhanVienHoTro,SoDienThoai,TongTienDaChi,SoLanMuaHang FROM KhachHang where isDeleted=1 ";
+            String sql = "SELECT MaKhachHang,TenKhachHang,MaNhanVienHoTro,SoDienThoai,TongTienDaChi,SoLanMuaHang FROM KhachHang where isDeleted=2 ";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
@@ -184,7 +186,7 @@ public class Customer_Controller implements Initializable {
     }
     @FXML
     public void deleteData() {
-        String sql = "UPDATE KHACHHANG SET isDeleted = 3 where soDienThoai = '" + txtPhoneNumber.getText() + "'";
+        String sql = "UPDATE KHACHHANG SET isDeleted = 3 where makhachhang = '" + txtMaKhachHang.getText() + "'";
         executeQuery(sql);
         lblThongBao.setText("Xóa thành công");
         list.clear();
@@ -208,5 +210,12 @@ public class Customer_Controller implements Initializable {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+    public void selectedID(){
+        Customer_DAO customer_dao = tblModel.getSelectionModel().getSelectedItem();
+        txtMaKhachHang.setText(customer_dao.getMaKhachHang());
+        txtName.setText(customer_dao.getTenKhachHang());
+        txtPhoneNumber.setText(customer_dao.getSoDienThoai());
+        txtStaffID.setText(customer_dao.getMaNhanVienHoTro());
     }
 }
