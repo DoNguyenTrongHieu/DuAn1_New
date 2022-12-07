@@ -12,9 +12,9 @@
 }
 .text-field_and_password-field{
     -fx-background-color: transparent;
-    -fx-border-color:  #c9a6ae;
+    -fx-border-color:  #2F4D47;
     -fx-border-width: 0px 0px 2px 0px;
-    -fx-text-fill: #c9a6ae;
+    -fx-text-fill: #2F4D47;
 }
 
 

@@ -55,12 +55,13 @@
                   <Image url="@../Icon/search.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnAdd" layoutX="349.0" layoutY="242.0" mnemonicParsing="false" onAction="#insertValueCustomer" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Add" />
+            <Button fx:id="btnAdd" layoutX="349.0" layoutY="242.0" mnemonicParsing="false" onAction="#insertValueCustomer" prefHeight="25.0" prefWidth="83.0" stylesheets="@../Css/Customer.css" text="Add" />
             <Label fx:id="lblThongBao" alignment="CENTER" layoutX="13.0" layoutY="310.0" prefHeight="21.0" prefWidth="294.0" />
-            <Button layoutX="349.0" layoutY="134.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Edit" />
-            <Button layoutX="349.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Delete" />
+            <Button layoutX="349.0" layoutY="134.0" mnemonicParsing="false" onAction="#executeUpdateName" prefHeight="25.0" prefWidth="83.0" stylesheets="@../Css/Customer.css" text="Edit name" />
+            <Button layoutX="349.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="25.0" prefWidth="83.0" stylesheets="@../Css/Customer.css" text="Delete" />
             <TextField fx:id="txtMaKhachHang" disable="true" layoutX="56.0" layoutY="106.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" />
             <Label layoutX="55.0" layoutY="85.0" stylesheets="@../Css/Customer.css" text="Customer ID" />
+            <Button layoutX="458.0" layoutY="134.0" mnemonicParsing="false" onAction="#executeUpdatePhonenumber" prefHeight="25.0" prefWidth="141.0" stylesheets="@../Css/Customer.css" text="Edit phone number" />
          </children>
       </Pane>
    </children>

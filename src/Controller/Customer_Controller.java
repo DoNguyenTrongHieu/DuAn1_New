@@ -223,4 +223,57 @@ public class Customer_Controller implements Initializable {
         txtPhoneNumber.setText(customer_dao.getSoDienThoai());
         txtStaffID.setText(customer_dao.getMaNhanVienHoTro());
     }
+    // edit data
+    public void executeUpdateName(){
+        String sql = "update khachhang set tenkhachhang=N'"+txtName.getText()+"'"+" where makhachhang ='"+txtMaKhachHang.getText()+"'";
+        executeQuery(sql);
+        lblThongBao.setText("Cập nhật tên thành công");
+        list.clear();
+        try {
+            Connected_Controller connected_controller = new Connected_Controller();
+            Connection connection1 = connected_controller.getConnection();
+
+            String query = "SELECT MaKhachHang,TenKhachHang,MaNhanVienHoTro,SoDienThoai,TongTienDaChi,SoLanMuaHang FROM KhachHang where isDeleted=2 ";
+            Statement statement = connection1.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()) {
+                list.add(new Customer_DAO(
+                        rs.getString("MaKhachHang"),
+                        rs.getString("TenKhachHang"),
+                        rs.getString("MaNhanVienHoTro"),
+                        rs.getString("SoDienThoai"),
+                        rs.getFloat(String.valueOf("TongTienDaChi")),
+                        rs.getInt("SoLanMuaHang")));
+            }
+            tblModel.setItems(list);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    public void executeUpdatePhonenumber(){
+        String sql = "update khachhang set sodienthoai='"+txtPhoneNumber.getText()+"'"+" where makhachhang = '"+txtMaKhachHang.getText()+"'";
+        executeQuery(sql);
+        lblThongBao.setText("Cập nhật số thành công");
+        list.clear();
+        try {
+            Connected_Controller connected_controller = new Connected_Controller();
+            Connection connection1 = connected_controller.getConnection();
+
+            String query = "SELECT MaKhachHang,TenKhachHang,MaNhanVienHoTro,SoDienThoai,TongTienDaChi,SoLanMuaHang FROM KhachHang where isDeleted=2 ";
+            Statement statement = connection1.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()) {
+                list.add(new Customer_DAO(
+                        rs.getString("MaKhachHang"),
+                        rs.getString("TenKhachHang"),
+                        rs.getString("MaNhanVienHoTro"),
+                        rs.getString("SoDienThoai"),
+                        rs.getFloat(String.valueOf("TongTienDaChi")),
+                        rs.getInt("SoLanMuaHang")));
+            }
+            tblModel.setItems(list);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }

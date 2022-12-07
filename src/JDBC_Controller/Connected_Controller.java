@@ -7,7 +7,7 @@ public class Connected_Controller {
 
 
     public static Connection getConnection() {
-        String serverName = "TRONGHIEU";
+        String serverName = "HIEUDO";
         String databaseName = "QuanLyTiemBanh";
         String databaseUsername = "sa";
         String databasePassword = "1234";
