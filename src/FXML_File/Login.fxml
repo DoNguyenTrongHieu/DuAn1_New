@@ -20,7 +20,7 @@
                   <Image url="@../Icon/birthday-cake.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="84.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bakery Management">
+            <Text fill="#4d3b3f" layoutX="84.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bakery Management">
                <font>
                   <Font size="20.0" />
                </font>
@@ -28,12 +28,12 @@
          </children></AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="500.0" prefWidth="433.0" BorderPane.alignment="CENTER">
+      <AnchorPane id="anchorPaneRight" fx:id="pane" prefHeight="500.0" prefWidth="433.0" stylesheets="@../Css/Login.css" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="txtUser" layoutX="116.0" layoutY="198.0" promptText="User name" styleClass="text-field_and_password-field" stylesheets="@../Css/Login.css" />
             <PasswordField fx:id="txtPassword" layoutX="116.0" layoutY="250.0" promptText="Password" styleClass="text-field_and_password-field" stylesheets="@../Css/Login.css" />
             <Button fx:id="btnLogin" layoutX="144.0" layoutY="365.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="39.0" prefWidth="72.0" styleClass="LoginButton" stylesheets="@../Css/Login.css" text="Log in" textFill="WHITE" />
-            <Text fill="#6fbfb7" layoutX="126.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Login">
+            <Text fill="#4d3b3f" layoutX="126.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Staff Login">
                <font>
                   <Font name="System Bold" size="19.0" />
                </font>

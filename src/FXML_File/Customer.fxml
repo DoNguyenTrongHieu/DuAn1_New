@@ -16,18 +16,17 @@
       <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Customer.css">
          <children>
             <Label layoutX="389.0" layoutY="36.0" stylesheets="@../Css/Customer.css" text="Tạo thành viên" />
-            <TextField layoutX="55.0" layoutY="119.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
-            <TextField layoutX="55.0" layoutY="173.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
-            <TextField layoutX="55.0" layoutY="227.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
-            <TableView fx:id="tblModel" layoutY="345.0" prefHeight="416.0" prefWidth="876.0">
+            <TextField fx:id="txtName" layoutX="55.0" layoutY="157.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
+            <TextField fx:id="txtPhoneNumber" layoutX="55.0" layoutY="211.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
+            <TextField fx:id="txtStaffID" layoutX="55.0" layoutY="265.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" stylesheets="@../Css/Customer.css" />
+            <TableView fx:id="tblModel" layoutY="345.0" onMouseClicked="#selectedID" prefHeight="416.0" prefWidth="876.0">
               <columns>
-                <TableColumn fx:id="customerID" prefWidth="130.0" resizable="false" text="Customer's code" />
-                <TableColumn fx:id="customerName" prefWidth="155.0" resizable="false" text="Customer name" />
-                  <TableColumn fx:id="staffID" prefWidth="110.0" resizable="false" text="Staff code" />
-                  <TableColumn fx:id="billCode" prefWidth="109.0" resizable="false" text="Bill code" />
-                  <TableColumn fx:id="phoneNumber" prefWidth="116.0" resizable="false" text="Phone number" />
-                  <TableColumn fx:id="totalExpenditure" prefWidth="133.0" resizable="false" text="Total expenditure" />
-                  <TableColumn fx:id="purchasesTime" minWidth="0.0" prefWidth="122.0" resizable="false" text="Purchases time" />
+                <TableColumn fx:id="customerID" prefWidth="179.0" resizable="false" text="Customer's code" />
+                <TableColumn fx:id="customerName" prefWidth="160.0" resizable="false" text="Customer name" />
+                  <TableColumn fx:id="staffID" prefWidth="141.0" resizable="false" text="Staff code" />
+                  <TableColumn fx:id="phoneNumber" prefWidth="118.0" resizable="false" text="Phone number" />
+                  <TableColumn fx:id="totalExpenditure" prefWidth="139.0" resizable="false" text="Total expenditure" />
+                  <TableColumn fx:id="purchasesTime" minWidth="0.0" prefWidth="138.0" resizable="false" text="Purchases time" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -46,9 +45,9 @@
                   <String fx:value="exitButton" />
                   <String fx:value="exit" />
                </styleClass></Button>
-            <Label layoutX="55.0" layoutY="98.0" stylesheets="@../Css/Customer.css" text="Name" />
-            <Label layoutX="55.0" layoutY="152.0" stylesheets="@../Css/Customer.css" text="Phone number" />
-            <Label layoutX="56.0" layoutY="206.0" stylesheets="@../Css/Customer.css" text="Staff support ID" />
+            <Label layoutX="55.0" layoutY="136.0" stylesheets="@../Css/Customer.css" text="Name" />
+            <Label layoutX="55.0" layoutY="190.0" stylesheets="@../Css/Customer.css" text="Phone number" />
+            <Label layoutX="56.0" layoutY="244.0" stylesheets="@../Css/Customer.css" text="Staff support ID" />
             <Label layoutX="541.0" layoutY="276.0" stylesheets="@../Css/Customer.css" text="Search" />
             <Button layoutX="757.0" layoutY="295.0" mnemonicParsing="false" styleClass="exitButton" stylesheets="@../Css/Customer.css" />
             <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="753.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
@@ -56,6 +55,12 @@
                   <Image url="@../Icon/search.png" />
                </image>
             </ImageView>
+            <Button fx:id="btnAdd" layoutX="349.0" layoutY="242.0" mnemonicParsing="false" onAction="#insertValueCustomer" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Add" />
+            <Label fx:id="lblThongBao" alignment="CENTER" layoutX="13.0" layoutY="310.0" prefHeight="21.0" prefWidth="294.0" />
+            <Button layoutX="349.0" layoutY="134.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Edit" />
+            <Button layoutX="349.0" layoutY="188.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="25.0" prefWidth="68.0" stylesheets="@../Css/Customer.css" text="Delete" />
+            <TextField fx:id="txtMaKhachHang" disable="true" layoutX="56.0" layoutY="106.0" prefHeight="25.0" prefWidth="207.0" styleClass="text-field" />
+            <Label layoutX="55.0" layoutY="85.0" stylesheets="@../Css/Customer.css" text="Customer ID" />
          </children>
       </Pane>
    </children>
