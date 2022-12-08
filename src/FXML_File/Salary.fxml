@@ -11,8 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Salary_Controller">
+<AnchorPane fx:id="anchorPanerSalary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Salary_Controller">
    <children>
       <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Employees.css">
          <children>
@@ -29,7 +30,7 @@
                   <String fx:value="exit" />
                </styleClass>
             </Button>
-            <TableView layoutY="368.0" prefHeight="392.0" prefWidth="876.0">
+            <TableView fx:id="tblModel" layoutY="368.0" prefHeight="392.0" prefWidth="876.0">
               <columns>
                 <TableColumn fx:id="employeesID" editable="false" prefWidth="106.40002596378326" text="Employees ID" />
                 <TableColumn fx:id="AttendanceID" editable="false" prefWidth="119.1999740600586" text="Attendance ID" />
@@ -40,15 +41,32 @@
                   <TableColumn fx:id="salary" editable="false" prefWidth="99.20001220703125" text="Salary" />
               </columns>
             </TableView>
-            <TextField layoutX="70.0" layoutY="86.0" promptText="Employees ID" />
+            <TextField layoutX="36.0" layoutY="86.0" promptText="Employees ID" />
             <Label layoutX="416.0" layoutY="20.0" text="Salary " />
-            <TextField layoutX="303.0" layoutY="86.0" promptText="Employees name" />
+            <TextField disable="true" layoutX="510.0" layoutY="86.0" promptText="Employees name" />
             <Line endX="772.9999389648438" layoutX="103.0" layoutY="143.0" startX="-102.99999237060547" />
-            <Line endX="772.9999389648438" layoutX="103.0" layoutY="153.0" startX="-102.99999237060547" />
-            <Label layoutX="14.0" layoutY="89.0" text="ID" />
-            <Label layoutX="242.0" layoutY="89.0" text="Name" />
-            <Label layoutX="467.0" layoutY="89.0" text="Role" />
-            <TextField layoutX="525.0" layoutY="86.0" promptText="Employees role" />
+            <Line endX="772.9999389648438" layoutX="103.0" layoutY="146.0" startX="-102.99999237060547" />
+            <Label layoutX="14.0" layoutY="89.0" stylesheets="@../Css/Salary.css" text="ID" />
+            <Label layoutX="459.0" layoutY="89.0" stylesheets="@../Css/Salary.css" text="Name" />
+            <Label layoutX="198.0" layoutY="89.0" stylesheets="@../Css/Salary.css" text="Attendance ID" />
+            <TextField layoutX="302.0" layoutY="86.0" promptText="Attendance ID" />
+            <Button layoutX="758.0" layoutY="309.0" mnemonicParsing="false" onAction="#backToEmployees" prefHeight="25.0" prefWidth="64.0" text="Back" textFill="WHITE" />
+            <TextField disable="true" editable="false" layoutX="35.0" layoutY="195.0" />
+            <TextField disable="true" editable="false" layoutX="35.0" layoutY="251.0" />
+            <TextField disable="true" editable="false" layoutX="35.0" layoutY="307.0" />
+            <Label layoutX="35.0" layoutY="178.0" prefHeight="21.0" prefWidth="149.0" stylesheets="@../Css/Salary.css" text="Basic salary" />
+            <Label layoutX="35.0" layoutY="230.0" prefHeight="21.0" prefWidth="171.0" stylesheets="@../Css/Salary.css" text="Standard working day" />
+            <Label layoutX="38.0" layoutY="286.0" prefHeight="21.0" prefWidth="149.0" stylesheets="@../Css/Salary.css" text="Workday" />
+            <TextField disable="true" editable="false" layoutX="228.0" layoutY="195.0" />
+            <Label layoutX="228.0" layoutY="178.0" prefHeight="21.0" prefWidth="149.0" stylesheets="@../Css/Salary.css" text="Subsidies salary" />
+            <Button layoutX="722.0" layoutY="87.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Find" textFill="WHITE" />
+            <TextField disable="true" editable="false" layoutX="459.0" layoutY="309.0" prefWidth="180.0" />
+            <Label id="salaryResult" layoutX="376.0" layoutY="312.0" stylesheets="@../Css/Salary.css" text="Salary" />
+            <Button layoutX="622.0" layoutY="183.0" mnemonicParsing="false" onAction="#openSceneSecurity" prefHeight="55.0" prefWidth="233.0" text="Change salary information" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>

@@ -6,9 +6,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -109,5 +111,12 @@ public class Employees_Controller implements Initializable {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    AnchorPane anchorPaneM;
+    @FXML
+    public void handleButtonActionSalary(ActionEvent event) throws Exception{
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../FXML_File/Salary.fxml"));
+        anchorPaneM.getChildren().setAll(anchorPane);
     }
 }

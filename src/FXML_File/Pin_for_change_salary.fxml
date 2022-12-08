@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+
+<AnchorPane minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Security_Controller">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0" styleClass="pane" stylesheets="@../Css/SecurityScene.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" layoutY="88.0" prefHeight="36.0" prefWidth="600.0" stylesheets="@../Css/SecurityScene.css" text="Input your PIN to change salary" />
+            <TextField id="text-field" layoutX="152.0" layoutY="139.0" prefHeight="25.0" prefWidth="297.0" styleClass="text-field" stylesheets="@../Css/SecurityScene.css">
+               <effect>
+                  <DropShadow height="14.66" radius="6.83" spread="0.07" width="14.66">
+                     <color>
+                        <Color red="0.6578947305679321" green="0.6152533888816833" blue="0.6152533888816833" />
+                     </color>
+                  </DropShadow>
+               </effect></TextField>
+            <Button layoutX="253.0" layoutY="214.0" mnemonicParsing="false" onAction="#applyAndNext" styleClass="buttonSec" stylesheets="@../Css/SecurityScene.css" text="Apply and next" textFill="WHITE" />
+            <Button layoutX="504.0" layoutY="336.0" mnemonicParsing="false" onAction="#backButton" styleClass="buttonSec" stylesheets="@../Css/SecurityScene.css" text="Back" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

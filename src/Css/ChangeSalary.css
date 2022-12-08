@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+#title{
+    -fx-font-family: 'Yeseva One', cursive;
+    -fx-font-size: 20px;
+}
+.pane{
+    -fx-background-color: #D0F2F2;
+}
+#smallTitle{
+    -fx-text-fill: #948f8f;
+}
+.buttonChangeSalary{
+    -fx-background-color: #485751;
+}

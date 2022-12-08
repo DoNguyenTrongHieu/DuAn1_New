@@ -4,6 +4,8 @@ import DAO_Enity.Customer_DAO;
 import JDBC_Controller.Connected_Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,7 +22,7 @@ public class Customer_Controller implements Initializable {
     Label lblThongBao;
 
     @FXML
-    TextField txtName, txtPhoneNumber, txtStaffID;
+    TextField txtName, txtPhoneNumber, txtStaffID,btnNew;
     @FXML
     TextField txtMaKhachHang;
 
@@ -31,6 +33,9 @@ public class Customer_Controller implements Initializable {
     public void exit(ActionEvent event) {
         System.exit(0);
     }
+
+    @FXML
+    TextField txtFilter;
 
     @FXML
     private TableView<Customer_DAO> tblModel;
@@ -62,6 +67,7 @@ public class Customer_Controller implements Initializable {
         // hiển thị dự liệu lên table
         showListCustomer();
         // loadTable();
+        findData();
     }
 // show dữ liệu
     public void showListCustomer() {
@@ -276,4 +282,35 @@ public class Customer_Controller implements Initializable {
             ex.printStackTrace();
         }
     }
+    public void findData(){
+        FilteredList<Customer_DAO> flCustomer = new FilteredList<>(list,p -> true); // truyền dữ liệu từ bảng vào FillteredList
+//        tblModel.setItems(flCustomer); // cho bảng hiển thị dữ liệu của filtered
+//        tblModel.getColumns().addAll(customerName,phoneNumber);
+        txtFilter.textProperty().addListener((observable,oldValue,newValue) -> {
+           flCustomer.setPredicate(customer_dao -> {
+// tìm k ra bản ghi nào thì hiển thị hết tất cả
+               if(newValue.isEmpty() || newValue.isBlank() || newValue == null){
+                   return true;
+               }
+               String search = newValue.toLowerCase();
+               if(customer_dao.getSoDienThoai().toLowerCase().indexOf(search) > -1){
+                   return true; // là tìm thấy
+               }else if(customer_dao.getTenKhachHang().toLowerCase().indexOf(search) > -1){
+                    return true;
+               }else
+                   return false;
+
+           });
+        });
+        SortedList<Customer_DAO> sortedListData = new SortedList<>(flCustomer);
+        sortedListData.comparatorProperty().bind(tblModel.comparatorProperty());
+        tblModel.setItems(sortedListData);
+    }
+    public void resetTextField(){
+        txtMaKhachHang.setText("");
+        txtName.setText("");
+        txtPhoneNumber.setText("");
+        txtStaffID.setText("");
+    }
+
 }

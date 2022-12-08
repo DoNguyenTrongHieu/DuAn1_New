@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Employees_Controller">
+<AnchorPane fx:id="anchorPaneM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Employees_Controller">
    <children>
       <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Employees.css">
          <children>
@@ -80,6 +80,7 @@
                   <String fx:value="exit" />
                </styleClass>
             </Button>
+            <Button fx:id="btnSalary" layoutX="631.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleButtonActionSalary" text="Salary manager" textFill="WHITE" />
          </children>
       </Pane>
    </children>

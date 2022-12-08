@@ -15,3 +15,6 @@
 .exit:hover{
     -fx-background-color: #E0494E;
 }
+.exitButton{
+    -fx-background-color: transparent;
+}
