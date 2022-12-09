@@ -30,7 +30,7 @@ public class Attendance_Controller implements Initializable {
     private TableColumn<Attendance_DAO, String> attendanceID;
 
     @FXML
-    private TableColumn<Attendance_DAO, String> date;
+    private TableColumn<Attendance_DAO, String> MaNhanVien;
 
     @FXML
     private TableColumn<Attendance_DAO, String> name;
@@ -46,20 +46,20 @@ public class Attendance_Controller implements Initializable {
     public void fillDataToTable(){
         attendanceID.setCellValueFactory(new PropertyValueFactory<Attendance_DAO,String>("maChamCong"));
         name.setCellValueFactory(new PropertyValueFactory<Attendance_DAO,String>("hoTen"));
-        date.setCellValueFactory(new PropertyValueFactory<Attendance_DAO,String>("ngayChamCong"));
+        MaNhanVien.setCellValueFactory(new PropertyValueFactory<Attendance_DAO,String>("MaNhanVien"));
         role.setCellValueFactory(new PropertyValueFactory<Attendance_DAO,String>("chucVu"));
         tblAttendance.setItems(list);
         try {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
-            String sql = "select MaChamCong,Ten,NgayChamCong,ChucVu from ChamCong";
+            String sql = "select MaChamCong,Ten,MaNhanVien,ChucVu from ChamCong";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()){
                 list.add(new Attendance_DAO(
                    rs.getString("MaChamCong"),
                    rs.getString("Ten"),
-                   rs.getString("NgayChamCong"),
+                   rs.getString("MaNhanVien"),
                    rs.getString("ChucVu")
                 ));
             }
