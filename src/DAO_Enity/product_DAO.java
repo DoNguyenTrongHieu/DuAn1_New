@@ -1,7 +1,7 @@
 package DAO_Enity;
 
 public class product_DAO {
-    private String MaSamPham;
+    private String MaSanPham;
     private String TenSanpham;
     private String Ngaynhaphang;
     private String Ngayhethan;
@@ -10,8 +10,8 @@ public class product_DAO {
 
     public product_DAO() {
     }
-    public product_DAO(String MaSamPham, String TenSanpham, String Ngaynhaphang, String Ngayhethan, String SoLuong, Float DonGia) {
-        this.MaSamPham = MaSamPham;
+    public product_DAO(String MaSanPham, String TenSanpham, String Ngaynhaphang, String Ngayhethan, String SoLuong, Float DonGia) {
+        this.MaSanPham = MaSanPham;
         this.TenSanpham = TenSanpham;
         this.Ngaynhaphang = Ngaynhaphang;
         this.Ngayhethan = Ngayhethan;
@@ -19,11 +19,11 @@ public class product_DAO {
         this.DonGia = DonGia;
     }
     public String getMaSamPham() {
-        return MaSamPham;
+        return MaSanPham;
     }
 
     public void setMaSamPham(String MaSamPham) {
-        this.MaSamPham = MaSamPham;
+        this.MaSanPham = MaSamPham;
     }
 
     public String getTenSanpham() {

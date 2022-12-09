@@ -25,21 +25,21 @@
             <Label layoutX="92.0" layoutY="164.0" prefHeight="30.0" prefWidth="135.0" stylesheets="@../Css/Employees.css" text="Staff name" />
             <Label layoutX="92.0" layoutY="232.0" prefHeight="30.0" prefWidth="152.0" stylesheets="@../Css/Employees.css" text="Date of birth" />
             <Label layoutX="562.0" layoutY="168.0" stylesheets="@../Css/Employees.css" text="Role Id" />
-            <TextField layoutX="94.0" layoutY="136.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
-            <TextField layoutX="562.0" layoutY="136.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
-            <TextField layoutX="92.0" layoutY="198.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
-            <TextField layoutX="562.0" layoutY="198.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
-            <TextField layoutX="94.0" layoutY="262.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
-            <TextField layoutX="562.0" layoutY="262.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
+            <TextField fx:id="txtMaNV" layoutX="94.0" layoutY="136.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
+            <TextField fx:id="txtMaChamCong" layoutX="562.0" layoutY="136.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
+            <TextField fx:id="txtTenNV" layoutX="92.0" layoutY="198.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
+            <TextField fx:id="txtMaChucVu" layoutX="562.0" layoutY="198.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
+            <TextField fx:id="txtNgaySinh" layoutX="94.0" layoutY="262.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
+            <TextField fx:id="txtEmail" layoutX="562.0" layoutY="262.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
             <Label layoutX="562.0" layoutY="298.0" prefHeight="30.0" prefWidth="152.0" stylesheets="@../Css/Employees.css" text="Phone number" />
-            <TextField layoutX="562.0" layoutY="328.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
+            <TextField fx:id="txtSdt" layoutX="562.0" layoutY="328.0" prefHeight="27.0" prefWidth="235.0" stylesheets="@../Css/Employees.css" />
             <Label layoutX="92.0" layoutY="298.0" prefHeight="30.0" prefWidth="152.0" stylesheets="@../Css/Employees.css" text="Sex" />
-            <RadioButton layoutX="92.0" layoutY="333.0" mnemonicParsing="false" text="Male">
+            <RadioButton fx:id="rdbNam" layoutX="92.0" layoutY="333.0" mnemonicParsing="false" text="Male">
                <toggleGroup>
                   <ToggleGroup fx:id="gioiTinh" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton layoutX="187.0" layoutY="333.0" mnemonicParsing="false" text="Famale" toggleGroup="$gioiTinh" />
+            <RadioButton fx:id="rdbNu" layoutX="187.0" layoutY="333.0" mnemonicParsing="false" text="Famale" toggleGroup="$gioiTinh" />
             <TableView fx:id="table" layoutY="436.0" prefHeight="324.0" prefWidth="876.0">
               <columns>
                 <TableColumn fx:id="maNVColumn" prefWidth="92.79998934268951" resizable="false" text="Staff ID" />
@@ -55,7 +55,7 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Button layoutX="92.0" layoutY="388.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" stylesheets="@../Css/Employees.css" text="Add " textFill="WHITE" />
+            <Button fx:id="btnThem" layoutX="92.0" layoutY="388.0" mnemonicParsing="false" onAction="#insertValueEmployees" prefHeight="30.0" prefWidth="50.0" stylesheets="@../Css/Employees.css" text="Add " textFill="WHITE" />
             <Button layoutX="298.0" layoutY="387.0" mnemonicParsing="false" styleClass="refeshButton" stylesheets="@../Css/Employees.css">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -81,6 +81,7 @@
                </styleClass>
             </Button>
             <Button fx:id="btnSalary" layoutX="631.0" layoutY="391.0" mnemonicParsing="false" onAction="#handleButtonActionSalary" text="Salary manager" textFill="WHITE" />
+            <Label fx:id="lblThongBao" layoutX="353.0" layoutY="393.0" prefHeight="21.0" prefWidth="216.0" />
          </children>
       </Pane>
    </children>

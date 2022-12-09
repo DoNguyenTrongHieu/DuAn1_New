@@ -57,7 +57,7 @@ public class Product_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ProductID.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("MaSamPham"));
+        ProductID.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("MaSanPham"));
         Productname.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("TenSanpham"));
         Importdate.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("Ngaynhaphang"));
         Expirationdate.setCellValueFactory(new PropertyValueFactory<product_DAO,String>("Ngayhethan"));
