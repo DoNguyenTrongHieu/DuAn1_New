@@ -126,15 +126,15 @@ public class Employees_Controller implements Initializable {
     }
 
     public void insertValueEmployees() {
-//        String s;
-//        if(rdbNam.isSelected()){
-//            s = "false";
-//        }
-//        if(rdbNu.isSelected()){
-//            s = "true";
-//        }
+        String s = null;
+        if(rdbNam.isSelected()){
+            s = "false";
+        }
+        if(rdbNu.isSelected()){
+            s = "true";
+        }
         if (validate() == true) {
-            String sql = "insert into NhanVien values ('"+txtMaNV.getText()+"',N'"+txtTenNV.getText()+"','"+txtNgaySinh.getText()+"','true','"+txtMaChamCong.getText()+"','"+txtMaChucVu.getText()+"','"+txtEmail.getText()+"','"+txtSdt.getText()+"',2)";
+            String sql = "insert into NhanVien values ('"+txtMaNV.getText()+"',N'"+txtTenNV.getText()+"','"+txtNgaySinh.getText()+"','"+ s +"','"+txtMaChamCong.getText()+"','"+txtMaChucVu.getText()+"','"+txtEmail.getText()+"','"+txtSdt.getText()+"',2)";
             executeQuery(sql);
             System.out.println("them thanh cong");
             listM.clear();

@@ -44,7 +44,7 @@
             <Label layoutX="55.0" layoutY="190.0" stylesheets="@../Css/Customer.css" text="Phone number" />
             <Label layoutX="56.0" layoutY="244.0" stylesheets="@../Css/Customer.css" text="Staff support ID" />
             <Label layoutX="541.0" layoutY="276.0" stylesheets="@../Css/Customer.css" text="Search" />
-            <Button id="exitButton" layoutX="757.0" layoutY="295.0" mnemonicParsing="false" stylesheets="@../Css/Customer.css">
+            <Button id="exitButton" layoutX="757.0" layoutY="295.0" mnemonicParsing="false" onAction="#findData" stylesheets="@../Css/Customer.css">
                <graphic>
                   <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
