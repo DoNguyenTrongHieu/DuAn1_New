@@ -133,6 +133,7 @@ public class Employees_Controller implements Initializable {
         if(rdbNu.isSelected()){
             s = "true";
         }
+        //dd
         if (validate() == true) {
             String sql = "insert into NhanVien values ('"+txtMaNV.getText()+"',N'"+txtTenNV.getText()+"','"+txtNgaySinh.getText()+"','"+ s +"','"+txtMaChamCong.getText()+"','"+txtMaChucVu.getText()+"','"+txtEmail.getText()+"','"+txtSdt.getText()+"',2)";
             executeQuery(sql);
