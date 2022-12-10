@@ -61,6 +61,7 @@ public class Product_Controller implements Initializable {
         // hiển thị dự liệu lên table
         fillproduct();
         // loadTable();
+//        selectedID();
 
     }
     public void fillproduct() {
@@ -172,5 +173,15 @@ public class Product_Controller implements Initializable {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+    public void selectedID(){
+        product_DAO product_DAO = tblModel.getSelectionModel().getSelectedItem();
+        txtid.setText(product_DAO.getMaSanPham());
+        txtname.setText(product_DAO.getTenSanPham());
+        txtday.setText(product_DAO.getNgayNhapHang());
+        txtdat.setText(product_DAO.getNgayHetHan());
+        txtslot.setText(String.valueOf(product_DAO.getSoLuong()));
+        txtcost.setText(String.valueOf(product_DAO.getDongia()));
+
     }
 }

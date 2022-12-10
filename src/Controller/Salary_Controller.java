@@ -37,9 +37,6 @@ public class Salary_Controller implements Initializable {
     private TableColumn<Salary_DAO, Float> basicSalary;
 
     @FXML
-    private TableColumn<Salary_DAO, String> employeesID;
-
-    @FXML
     private TableColumn<Salary_DAO, Float> salary;
 
     @FXML
@@ -73,7 +70,6 @@ public class Salary_Controller implements Initializable {
     }
 
     public void showSalaryList(){
-        employeesID.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("maNhanVien"));
         MaVaiTro.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("MaVaiTro"));
         basicSalary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Float>("luongCoBan"));
         subsidiesSalary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Float>("luongPhuCap"));
@@ -86,12 +82,11 @@ public class Salary_Controller implements Initializable {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
 
-            String sql = "SELECT manhanvien,MaVaiTro,luongcoban,luongphucap,ngaycongchuan,ngaycong,tongluong FROM luong";
+            String sql = "SELECT MaVaiTro,luongcoban,luongphucap,ngaycongchuan,ngaycong,tongluong FROM luong";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 salaryList.add(new Salary_DAO(
-                    rs.getString("Manhanvien"),
                     rs.getString("MaVaiTro"),
                     rs.getFloat("luongcoban"),
                     rs.getFloat("luongphucap"),

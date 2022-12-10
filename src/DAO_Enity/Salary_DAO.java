@@ -1,7 +1,6 @@
 package DAO_Enity;
 
 public class Salary_DAO {
-    private String maNhanVien;
     private String MaVaiTro;
     private float luongCoBan;
     private float luongPhuCap;
@@ -12,8 +11,8 @@ public class Salary_DAO {
     public Salary_DAO() {
     }
 
-    public Salary_DAO(String maNhanVien, String MaVaiTro, float luongCoBan, float luongPhuCap,int ngayCong, int ngayCongChuan, float tongLuong) {
-        this.maNhanVien = maNhanVien;
+    public Salary_DAO( String MaVaiTro, float luongCoBan, float luongPhuCap,int ngayCong, int ngayCongChuan, float tongLuong) {
+
         this.MaVaiTro = MaVaiTro;
         this.luongCoBan = luongCoBan;
         this.luongPhuCap = luongPhuCap;
@@ -22,13 +21,6 @@ public class Salary_DAO {
         this.tongLuong = tongLuong;
     }
 
-    public String getMaNhanVien() {
-        return maNhanVien;
-    }
-
-    public void setMaNhanVien(String maNhanVien) {
-        this.maNhanVien = maNhanVien;
-    }
 
     public String getMaVaiTro() {
         return MaVaiTro;

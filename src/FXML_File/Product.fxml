@@ -29,7 +29,7 @@
                </styleClass>
             </Button>
             <Label id="labelTitle" layoutX="378.0" layoutY="30.0" stylesheets="@../Css/Attendance.css" text="Product" />
-            <TableView fx:id="tblModel" layoutY="463.0" prefHeight="298.0" prefWidth="876.0">
+            <TableView fx:id="tblModel" layoutY="463.0" onMouseClicked="#selectedID" prefHeight="298.0" prefWidth="876.0">
               <columns>
                 <TableColumn fx:id="ProductID" prefWidth="114.0" resizable="false" text="Product ID" />
                 <TableColumn fx:id="Productname" prefWidth="274.0" resizable="false" text="Product name" />
