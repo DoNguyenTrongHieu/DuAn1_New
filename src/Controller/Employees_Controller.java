@@ -1,5 +1,6 @@
 package Controller;
 
+import DAO_Enity.Customer_DAO;
 import DAO_Enity.Employees_DAO;
 import JDBC_Controller.Connected_Controller;
 import javafx.collections.FXCollections;
@@ -172,34 +173,34 @@ public class Employees_Controller implements Initializable {
             lblThongBao.setText("Không được bỏ trống mã nhân viên");
             return false;
         }
-//        if (txtTenNV.getText().trim().equalsIgnoreCase("")) {
-//            lblThongBao.setText("Không được bỏ trống tên nhân viên");
-//            return false;
-//        }
-//        if (txtNgaySinh.getText().trim().equalsIgnoreCase("")) {
-//            lblThongBao.setText("Không được bỏ trống ngày sinh");
-//            return false;
-//        }
-////        if (!(rdbNam.isSelected() || rdbNu.isSelected())) {
-////            lblThongBao.setText("Không được bỏ trống giới tính");
-////            return false;
-////        }
-//        if (txtMaChamCong.getText().trim().equalsIgnoreCase("")) {
-//            lblThongBao.setText("Không được bỏ trống mã chấm công");
-//            return false;
-//        }
-//        if (txtMaChucVu.getText().trim().equalsIgnoreCase("")) {
-//            lblThongBao.setText("Không được bỏ trống mã chức vụ");
-//            return false;
-//        }
-//        if (txtEmail.getText().trim().equalsIgnoreCase("")) {
-//            lblThongBao.setText("Không được bỏ trống email");
-//            return false;
-//        }
-//        if (txtSdt.getText().trim().equalsIgnoreCase("")) {
-//            lblThongBao.setText("Không được bỏ trống sđt");
-//            return false;
-//        }
+        if (txtTenNV.getText().trim().equalsIgnoreCase("")) {
+            lblThongBao.setText("Không được bỏ trống tên nhân viên");
+            return false;
+        }
+        if (txtNgaySinh.getText().trim().equalsIgnoreCase("")) {
+            lblThongBao.setText("Không được bỏ trống ngày sinh");
+            return false;
+        }
+        if (!(rdbNam.isSelected() || rdbNu.isSelected())) {
+            lblThongBao.setText("Không được bỏ trống giới tính");
+            return false;
+        }
+        if (txtMaChamCong.getText().trim().equalsIgnoreCase("")) {
+            lblThongBao.setText("Không được bỏ trống mã chấm công");
+            return false;
+        }
+        if (txtMaChucVu.getText().trim().equalsIgnoreCase("")) {
+            lblThongBao.setText("Không được bỏ trống mã chức vụ");
+            return false;
+        }
+        if (txtEmail.getText().trim().equalsIgnoreCase("")) {
+            lblThongBao.setText("Không được bỏ trống email");
+            return false;
+        }
+        if (txtSdt.getText().trim().equalsIgnoreCase("")) {
+            lblThongBao.setText("Không được bỏ trống sđt");
+            return false;
+        }
         return true;
     }
 
@@ -253,12 +254,49 @@ public class Employees_Controller implements Initializable {
         txtMaNV.setText("");
         txtTenNV.setText("");
         txtNgaySinh.setText("");
-        rdbNam.equals("");
-        rdbNu.equals("");
+        rdbNam.setSelected(false);
+        rdbNu.setSelected(false);
         txtMaChamCong.setText("");
         txtMaChucVu.setText("");
         txtEmail.setText("");
         txtSdt.setText("");
+    }
+
+    public void executeUpdate(){
+        String s = null;
+        if(rdbNam.isSelected()){
+            s = "false";
+        }
+        if(rdbNu.isSelected()){
+            s = "true";
+        }
+        String v1 = txtMaNV.getText();
+        String sql = "update NhanVien set maNv= '"+v1+"' , hoTen=N'"+txtTenNV.getText()+"', ngaySinh = '"+txtNgaySinh.getText()+"', gioiTinh = '"+s+"', maChamCong = '"+txtMaChamCong.getText()+"' , maChucVu = '"+txtMaChucVu.getText()+"', email = '"+txtEmail.getText()+"', soDienThoai = '"+txtSdt.getText()+"' "+" where maNv ='"+v1+"'";
+        executeQuery(sql);
+        lblThongBao.setText("Cập nhật thành công");
+        listM.clear();
+        try {
+            Connected_Controller connected_controller = new Connected_Controller();
+            Connection connection1 = connected_controller.getConnection();
+
+            String query = "SELECT MaNv,HoTen,NgaySinh,GioiTinh,MaChamCong,MaChucVu,Email,SoDienThoai FROM NhanVien where isDeleted=2 ";
+            Statement statement = connection1.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()) {
+                listM.add(new Employees_DAO(
+                        rs.getString("maNV"),
+                        rs.getString("HoTen"),
+                        rs.getString("ngaysinh"),
+                        rs.getBoolean("gioitinh"),
+                        rs.getString("machamcong"),
+                        rs.getString("machucvu"),
+                        rs.getString("email"),
+                        rs.getString("soDienThoai")));
+            }
+            table.setItems(listM);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
     @FXML
     AnchorPane anchorPaneM;
