@@ -52,7 +52,7 @@
             <TextField fx:id="txtslot" layoutX="54.0" layoutY="320.0" prefHeight="27.0" prefWidth="338.0" />
             <TextField fx:id="txtcost" layoutX="54.0" layoutY="374.0" prefHeight="27.0" prefWidth="338.0" />
             <Button layoutX="665.0" layoutY="375.0" mnemonicParsing="false" onAction="#deleteData" text="Delete" textFill="WHITE" />
-            <Button layoutX="587.0" layoutY="375.0" mnemonicParsing="false" text="Update" textFill="WHITE" />
+            <Button layoutX="587.0" layoutY="375.0" mnemonicParsing="false" onAction="#executeUpdate" text="Update" textFill="WHITE" />
             <Button layoutX="499.0" layoutY="375.0" mnemonicParsing="false" onAction="#insertValueproduct" text="Add new" textFill="WHITE" />
             <Label fx:id="lblTB" layoutX="54.0" layoutY="426.0" prefHeight="21.0" prefWidth="338.0" />
          </children>

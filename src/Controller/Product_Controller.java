@@ -184,4 +184,30 @@ public class Product_Controller implements Initializable {
         txtcost.setText(String.valueOf(product_DAO.getDongia()));
 
     }
+    public void executeUpdate(){
+        String sql = "update SanPham set TenSanPham=N'"+txtname.getText()+"'"+" where MaSanPham ='"+txtid.getText()+"'";
+        executeQuery(sql);
+        lblTB.setText("Cập nhật  thành công");
+        list.clear();
+        try {
+            Connected_Controller connected_controller = new Connected_Controller();
+            Connection connection1 = connected_controller.getConnection();
+
+            String query = "SELECT MaSanPham,TenSanPham,NgayNhapHang,NgayHetHan,SoLuong,Dongia FROM SanPham where isDeleted=2";
+            Statement statement = connection1.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()) {
+                list.add(new product_DAO(
+                        rs.getString("MaSanPham"),
+                        rs.getString("TenSanPham"),
+                        rs.getString("NgayNhapHang"),
+                        rs.getString("NgayHetHan"),
+                        rs.getInt(String.valueOf("SoLuong")),
+                        rs.getFloat("dongia")));
+            }
+            tblModel.setItems(list);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }
