@@ -2,67 +2,69 @@ package DAO_Enity;
 
 public class product_DAO {
     private String MaSanPham;
-    private String TenSanpham;
-    private String Ngaynhaphang;
-    private String Ngayhethan;
-    private String SoLuong ;
-    private Float DonGia;
+    private String TenSanPham;
+    private String NgayNhapHang;
+    private String NgayHetHan;
+    private int SoLuong;
+    private Float Dongia;
 
     public product_DAO() {
     }
-    public product_DAO(String MaSanPham, String TenSanpham, String Ngaynhaphang, String Ngayhethan, String SoLuong, Float DonGia) {
-        this.MaSanPham = MaSanPham;
-        this.TenSanpham = TenSanpham;
-        this.Ngaynhaphang = Ngaynhaphang;
-        this.Ngayhethan = Ngayhethan;
-        this.SoLuong = SoLuong;
-        this.DonGia = DonGia;
+
+    public product_DAO(String maSanPham, String tenSanPham, String ngayNhapHang, String ngayHetHan, int soLuong, Float dongia) {
+        MaSanPham = maSanPham;
+        TenSanPham = tenSanPham;
+        NgayNhapHang = ngayNhapHang;
+        NgayHetHan = ngayHetHan;
+        SoLuong = soLuong;
+        Dongia = dongia;
     }
-    public String getMaSamPham() {
+
+    public String getMaSanPham() {
         return MaSanPham;
     }
 
-    public void setMaSamPham(String MaSamPham) {
-        this.MaSanPham = MaSamPham;
+    public void setMaSanPham(String maSanPham) {
+        MaSanPham = maSanPham;
     }
 
-    public String getTenSanpham() {
-        return TenSanpham;
+    public String getTenSanPham() {
+        return TenSanPham;
     }
 
-    public void setTenSanpham(String TenSanpham) {
-        this.TenSanpham = TenSanpham;
+    public void setTenSanPham(String tenSanPham) {
+        TenSanPham = tenSanPham;
     }
 
-    public String getNgaynhaphang() {
-        return Ngaynhaphang;
+    public String getNgayNhapHang() {
+        return NgayNhapHang;
     }
 
-    public void setNgaynhaphang(String Ngaynhaphang) {
-        this.Ngaynhaphang = Ngaynhaphang;
+    public void setNgayNhapHang(String ngayNhapHang) {
+        NgayNhapHang = ngayNhapHang;
     }
 
-    public String getNgayhethan() {
-        return Ngayhethan;
+    public String getNgayHetHan() {
+        return NgayHetHan;
     }
 
-    public void setNgayhethan(String Ngayhethan) {
-        this.Ngayhethan = Ngayhethan;
+    public void setNgayHetHan(String ngayHetHan) {
+        NgayHetHan = ngayHetHan;
     }
 
-    public String getSoLuong() {
+    public int getSoLuong() {
         return SoLuong;
     }
 
-    public void setSoLuong(String SoLuong) {
-        this.SoLuong = SoLuong;
+    public void setSoLuong(int soLuong) {
+        SoLuong = soLuong;
     }
 
-    public Float getDonGia() {
-        return DonGia;
+    public Float getDongia() {
+        return Dongia;
     }
 
-    public void setDonGia(Float DonGia) {
-        this.DonGia = DonGia;
+    public void setDongia(Float dongia) {
+        Dongia = dongia;
     }
 }
