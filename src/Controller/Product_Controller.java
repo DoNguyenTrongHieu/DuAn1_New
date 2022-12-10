@@ -1,20 +1,17 @@
 package Controller;
 
 
-import DAO_Enity.Customer_DAO;
 import DAO_Enity.product_DAO;
 import JDBC_Controller.Connected_Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import javax.swing.*;
+
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -27,7 +24,7 @@ public class Product_Controller implements Initializable {
     @FXML
     Button btnExit;
     @FXML
-    JLabel lblThongBao;
+    Label lblTB;
     @FXML
     TextField txtid,txtname,txtday,txtdat,txtslot,txtcost ;
     @FXML
@@ -118,12 +115,12 @@ public class Product_Controller implements Initializable {
                             rs.getFloat("dongia")));
                 }
                 tblModel.setItems(list);
-                lblThongBao.setText("Tạo thành công");
+                lblTB.setText("Tạo thành công");
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }else{
-            lblThongBao.setText("Tạo thất bại");
+            lblTB.setText("Tạo thất bại");
         }
 
     }
@@ -140,11 +137,11 @@ public class Product_Controller implements Initializable {
     }
     public boolean validate(){
         if(txtid.getText().trim().equalsIgnoreCase("")){
-            lblThongBao.setText("Không được bỏ trống ID sản phẩm ");
+            lblTB.setText("Không được bỏ trống ID sản phẩm ");
             return false;
         }
         if(txtname.getText().trim().equalsIgnoreCase("")){
-            lblThongBao.setText("Không được bỏ trống tên sản phẩm");
+            lblTB.setText("Không được bỏ trống tên sản phẩm");
             return false;
         }
 
@@ -153,7 +150,7 @@ public class Product_Controller implements Initializable {
     public void deleteData() {
         String sql = "UPDATE SanPham SET isDeleted = 3 where MaSanPham = '" + txtid.getText() + "'";
         executeQuery(sql);
-        lblThongBao.setText("Xóa thành công");
+        lblTB.setText("Xóa thành công");
         list.clear();
         try {
             Connected_Controller connected_controller = new Connected_Controller();

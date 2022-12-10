@@ -31,7 +31,7 @@ public class Salary_Controller implements Initializable {
     private TableView<Salary_DAO> tblModel;
 
     @FXML
-    private TableColumn<Salary_DAO, String> AttendanceID;
+    private TableColumn<Salary_DAO, String> MaVaiTro;
 
     @FXML
     private TableColumn<Salary_DAO, Float> basicSalary;
@@ -74,7 +74,7 @@ public class Salary_Controller implements Initializable {
 
     public void showSalaryList(){
         employeesID.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("maNhanVien"));
-        AttendanceID.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("maChamCong"));
+        MaVaiTro.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("MaVaiTro"));
         basicSalary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Float>("luongCoBan"));
         subsidiesSalary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Float>("luongPhuCap"));
         workday.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Integer>("ngayCong"));
@@ -86,13 +86,13 @@ public class Salary_Controller implements Initializable {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
 
-            String sql = "SELECT manhanvien,machamcong,luongcoban,luongphucap,ngaycongchuan,ngaycong,tongluong FROM luong";
+            String sql = "SELECT manhanvien,MaVaiTro,luongcoban,luongphucap,ngaycongchuan,ngaycong,tongluong FROM luong";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 salaryList.add(new Salary_DAO(
                     rs.getString("Manhanvien"),
-                    rs.getString("machamcong"),
+                    rs.getString("MaVaiTro"),
                     rs.getFloat("luongcoban"),
                     rs.getFloat("luongphucap"),
                     rs.getInt("ngaycong"),

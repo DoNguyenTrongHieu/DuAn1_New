@@ -33,10 +33,10 @@
             <TableView fx:id="tblModel" layoutY="368.0" prefHeight="392.0" prefWidth="876.0">
               <columns>
                 <TableColumn fx:id="employeesID" editable="false" prefWidth="106.40002596378326" text="Employees ID" />
-                <TableColumn fx:id="AttendanceID" editable="false" prefWidth="119.1999740600586" text="Attendance ID" />
-                  <TableColumn fx:id="basicSalary" editable="false" prefWidth="133.60003662109375" text="Basic Salary" />
-                  <TableColumn fx:id="subsidiesSalary" editable="false" prefWidth="127.20001220703125" text="Subsidies salary" />
-                  <TableColumn fx:id="workday" editable="false" prefWidth="119.19998168945312" text="Workday" />
+                <TableColumn fx:id="MaVaiTro" editable="false" prefWidth="61.99999237060547" text="Role" />
+                  <TableColumn fx:id="basicSalary" editable="false" prefWidth="180.0" text="Basic Salary" />
+                  <TableColumn fx:id="subsidiesSalary" editable="false" prefWidth="155.0" text="Subsidies salary" />
+                  <TableColumn fx:id="workday" editable="false" prefWidth="105.0" text="Workday" />
                   <TableColumn fx:id="standard_working_day" editable="false" prefWidth="167.2000732421875" text="Standard working day" />
                   <TableColumn fx:id="salary" editable="false" prefWidth="99.20001220703125" text="Salary" />
               </columns>
