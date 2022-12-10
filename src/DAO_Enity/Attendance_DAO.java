@@ -3,16 +3,16 @@ package DAO_Enity;
 public class Attendance_DAO {
         private String maChamCong;
         private String hoTen;
-        private String ngayChamCong;
+        private String MaNhanVien;
         private String chucVu;
 
     public Attendance_DAO() {
     }
 
-    public Attendance_DAO(String maChamCong, String hoTen, String ngayChamCong, String chucVu) {
+    public Attendance_DAO(String maChamCong, String hoTen, String MaNhanVien, String chucVu) {
         this.maChamCong = maChamCong;
         this.hoTen = hoTen;
-        this.ngayChamCong = ngayChamCong;
+        this.MaNhanVien = MaNhanVien;
         this.chucVu = chucVu;
     }
 
@@ -32,12 +32,12 @@ public class Attendance_DAO {
         this.hoTen = hoTen;
     }
 
-    public String getNgayChamCong() {
-        return ngayChamCong;
+    public String getMaNhanVien() {
+        return MaNhanVien;
     }
 
-    public void setNgayChamCong(String ngayChamCong) {
-        this.ngayChamCong = ngayChamCong;
+    public void setMaNhanVien(String MaNhanVien) {
+        this.MaNhanVien = MaNhanVien;
     }
 
     public String getChucVu() {

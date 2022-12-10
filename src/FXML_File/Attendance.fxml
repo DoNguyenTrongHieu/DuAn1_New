@@ -41,7 +41,7 @@
                 <TableColumn fx:id="attendanceID" prefWidth="131.99999392032623" resizable="false" text="Attendance ID" />
                 <TableColumn fx:id="name" prefWidth="384.79998779296875" resizable="false" text="Name" />
                   <TableColumn fx:id="role" minWidth="0.0" prefWidth="152.800048828125" resizable="false" text="Role" />
-                  <TableColumn fx:id="date" prefWidth="207.2000732421875" resizable="false" text="Date" />
+                  <TableColumn fx:id="MaNhanVien" prefWidth="207.2000732421875" resizable="false" text="EmployeesID" />
               </columns>
             </TableView>
          </children>
