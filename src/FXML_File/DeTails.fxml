@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,9 +17,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane fx:id="anchorPanerSalary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Salary_Controller">
+<AnchorPane fx:id="anchorPanerSalary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Salary_Controller">
    <children>
-      <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Employees.css">
+      <Pane id="paneContain" layoutY="-25.0" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Employees.css">
          <children>
             <Button fx:id="btnExit" layoutX="822.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" stylesheets="@../Css/Employees.css">
                <graphic>
@@ -36,20 +41,20 @@
             <Label layoutX="304.0" layoutY="90.0" stylesheets="@../Css/Salary.css" text="Mã khách hàng " />
             <TextField layoutX="423.0" layoutY="87.0" />
             <Button layoutX="644.0" layoutY="84.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="106.0" text="Find" textFill="WHITE" />
-            <TableView layoutY="146.0" prefHeight="608.0" prefWidth="876.0">
+            <TableView fx:id="tblModel" layoutY="146.0" prefHeight="608.0" prefWidth="876.0">
               <columns>
-                <TableColumn minWidth="0.0" prefWidth="35.20001298189163" text="STT " />
-                <TableColumn prefWidth="65.59997177124023" text="Mã hóa đơn " />
-                  <TableColumn prefWidth="67.19998931884766" text="Mã khách hàng " />
-                  <TableColumn prefWidth="85.60003662109375" text="Mã nhân viên xuất hóa đơn " />
-                  <TableColumn prefWidth="75.20001220703125" text="Thời gian xuất " />
-                  <TableColumn prefWidth="66.39996337890625" text="Ngày xuất " />
-                  <TableColumn prefWidth="115.199951171875" text="Tên sản phẩm " />
-                  <TableColumn prefWidth="47.199951171875" text="Số lượng sản phẩm " />
-                  <TableColumn prefWidth="100.00006103515625" text="Tổng giá từng sản phẩm " />
-                  <TableColumn prefWidth="67.2000732421875" text="Trạng thái " />
-                  <TableColumn minWidth="0.0" prefWidth="63.199951171875" text="SĐT " />
-                  <TableColumn prefWidth="92.800048828125" text="Thành tiền " />
+                <TableColumn fx:id="STT" minWidth="0.0" prefWidth="48.0" text="STT " />
+                <TableColumn fx:id="maHoaDon" prefWidth="102.99999237060547" text="Mã hóa đơn " />
+                  <TableColumn fx:id="maKhachHang" prefWidth="57.0" text="Mã khách hàng " />
+                  <TableColumn fx:id="maNhanVienXuat" prefWidth="48.0" text="Mã nhân viên xuất hóa đơn " />
+                  <TableColumn fx:id="thoiGianXuat" prefWidth="75.20001220703125" text="Thời gian xuất " />
+                  <TableColumn fx:id="ngayXuat" prefWidth="66.39996337890625" text="Ngày xuất " />
+                  <TableColumn fx:id="tenSanPham" prefWidth="50.0" text="Tên sản phẩm " />
+                  <TableColumn fx:id="soLuongSanPham" prefWidth="76.0" text="Số lượng sản phẩm " />
+                  <TableColumn fx:id="tongGia" prefWidth="76.0" text="Tổng giá từng sản phẩm " />
+                  <TableColumn fx:id="trangThai" prefWidth="100.0" text="Trạng thái " />
+                  <TableColumn fx:id="sdt" minWidth="0.0" prefWidth="64.0" text="SĐT " />
+                  <TableColumn fx:id="thanhTien" prefWidth="124.0" text="Thành tiền " />
               </columns>
             </TableView>
             <Label layoutX="410.0" layoutY="21.0" prefHeight="21.0" prefWidth="95.0" text="Invoice Detail" />

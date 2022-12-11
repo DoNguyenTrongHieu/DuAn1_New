@@ -17,9 +17,7 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class Product_Controller implements Initializable {
-//    private Connection con = null;
-//    private PreparedStatement prstm = null;
-//    private ResultSet rs = null;
+
 
     @FXML
     Button btnExit;

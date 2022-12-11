@@ -14,7 +14,7 @@ public class Details_DAO {
     private String sdt;
     private float thanhTien;
 
-    public Details_DAO() {
+    public Details_DAO(String stt, String maHoaDon, String maSanPham, String maKhachHang, String maNhanVienXuatHoaDon, String thoiGianXuat, String ngayXuat, String tenSanPham, int soLuongSanPham, float tongGiaTungSanPham, String trangThai, String soDienThoai, float thanhTien) {
     }
 
     public Details_DAO(int STT, String maHoaDon, String maKhachHang, String maNhanVienXuat, String thoiGianXuat, String ngayXuat, String tenSanPham, int soLuongSanPham, float tongGia, String trangThai, String sdt, float thanhTien) {

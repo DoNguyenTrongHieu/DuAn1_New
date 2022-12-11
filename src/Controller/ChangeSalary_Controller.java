@@ -109,6 +109,7 @@ public class ChangeSalary_Controller implements Initializable {
                 lbltest.setText("Kiểm tra lại giá trị bạn nhập đã có sai xót");
             }
         }
+        
 
 
 

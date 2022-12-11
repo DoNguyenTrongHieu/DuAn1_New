@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -9,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane fx:id="acPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Order_Controller">
+<AnchorPane fx:id="acPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Order_Controller">
    <children>
       <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Order.css">
          <children>
@@ -23,7 +28,7 @@
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
                   <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh gato" />
-                  <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
+                  <Button fx:id="btngato" layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -44,7 +49,7 @@
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="250,000vnd" />
                   <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh Tiramisu" />
-                  <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
+                  <Button fx:id="btntira" layoutX="153.0" layoutY="124.0" mnemonicParsing="false" onAction="#handleButtonActionPay" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -65,7 +70,7 @@
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="200,000vnd" />
                   <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh kem bắp" />
-                  <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
+                  <Button fx:id="btnkembap" layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -86,7 +91,7 @@
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="240,000vnd" />
                   <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh pía" />
-                  <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
+                  <Button fx:id="btnpia" layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -116,7 +121,7 @@
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="250,000vnd" />
                   <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh mousse" />
-                  <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
+                  <Button fx:id="btnmousse" layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -137,7 +142,7 @@
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="280,000vnd" />
                   <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Cheesecake" />
-                  <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
+                  <Button fx:id="btnchesss" layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -158,7 +163,7 @@
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="100,000vnd" />
                   <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Flan gato" />
-                  <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
+                  <Button fx:id="btnflan" layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -172,14 +177,14 @@
             <Pane layoutX="350.0" layoutY="502.0" prefHeight="160.0" prefWidth="204.0">
                <children>
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#5ed0a3" height="116.0" stroke="BLACK" strokeType="INSIDE" width="203.0" />
-                  <ImageView fitHeight="103.0" fitWidth="209.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="103.0" fitWidth="183.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Icon/banh-crepe-ngan-lop-tra-xanh.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="350,000vnd" />
                   <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh crepe ngàn lớp" />
-                  <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
+                  <Button fx:id="btn1k" layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -200,7 +205,7 @@
                   </ImageView>
                   <Label layoutX="2.0" layoutY="147.0" stylesheets="@../Css/Order.css" text="250,000vnd" />
                   <Label layoutX="5.0" layoutY="123.0" stylesheets="@../Css/Order.css" text="Bánh cupcake" />
-                  <Button layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
+                  <Button fx:id="btnupcake" layoutX="153.0" layoutY="124.0" mnemonicParsing="false" styleClass="cartButton" stylesheets="@../Css/Order.css">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -224,6 +229,7 @@
                   <String fx:value="exit" />
                </styleClass>
             </Button>
+            <Button fx:id="btnde" layoutX="585.0" layoutY="708.0" mnemonicParsing="false" onAction="#changebutton" prefHeight="31.0" prefWidth="193.0" text="deltails" />
          </children>
       </Pane>
    </children>
