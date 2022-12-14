@@ -4,7 +4,7 @@ public class Employees_DAO {
     private String maNv;
     private String hoTen;
     private String ngaySinh;
-    private boolean gioiTinh;
+    private String gioiTinh;
     private String maChamCong;
     private String maChucVu;
     private String email;
@@ -14,7 +14,7 @@ public class Employees_DAO {
 
     }
 
-    public Employees_DAO(String maNv, String hoTen, String ngaySinh, boolean gioiTinh, String maChamCong, String maChucVu, String email, String soDienThoai) {
+    public Employees_DAO(String maNv, String hoTen, String ngaySinh, String gioiTinh, String maChamCong, String maChucVu, String email, String soDienThoai) {
         this.maNv = maNv;
         this.hoTen = hoTen;
         this.ngaySinh = ngaySinh;
@@ -49,11 +49,11 @@ public class Employees_DAO {
         this.ngaySinh = ngaySinh;
     }
 
-    public boolean isGioiTinh() {
+    public String isGioiTinh() {
         return gioiTinh;
     }
 
-    public void setGioiTinh(boolean gioiTinh) {
+    public void setGioiTinh(String gioiTinh) {
         this.gioiTinh = gioiTinh;
     }
 

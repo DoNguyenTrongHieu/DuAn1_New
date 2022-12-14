@@ -61,14 +61,14 @@ public class Login_Controller{
         Connected_Controller connectedNow = new Connected_Controller();
         Connection connectionDB = connectedNow.getConnection();
 
-        String sql = "SELECT COUNT(1) FROM CHUCVU WHERE TAIKHOAN='"+txtUser.getText()+"' and MATKHAU='"+txtPassword.getText()+"'";
+        String sql = "SELECT COUNT(*) FROM CHUCVU WHERE TAIKHOAN='"+txtUser.getText()+"' and MATKHAU='"+txtPassword.getText()+"'";
 
         try {
             Statement statement = connectionDB.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()) {
-                if (resultSet.getInt(Integer.valueOf(resultSet.getString(1))) == 1) {
+                if (resultSet.getInt(1) >= 1) {
                     return true;
                 }else{
                     lblThongBao.setText("That bai");

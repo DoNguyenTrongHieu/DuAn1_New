@@ -15,9 +15,7 @@ import javafx.scene.layout.AnchorPane;
 
 import javax.swing.*;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class Employees_Controller implements Initializable {
@@ -63,7 +61,7 @@ public class Employees_Controller implements Initializable {
     @FXML
     private TableColumn<Employees_DAO, String> ngaysinhColumn;
     @FXML
-    private TableColumn<Employees_DAO, Boolean> gioiTinhColumn;
+    private TableColumn<Employees_DAO, String> gioiTinhColumn;
     @FXML
     private TableColumn<Employees_DAO, String> maChamCongColumn;
     @FXML
@@ -86,7 +84,7 @@ public class Employees_Controller implements Initializable {
         maNVColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("maNv"));
         tenNVColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("hoTen"));
         ngaysinhColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("ngaySinh"));
-        gioiTinhColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, Boolean>("gioiTinh"));
+        gioiTinhColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("gioiTinh"));
         maChamCongColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("maChamCong"));
         maChucVuColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("maChucVu"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<Employees_DAO, String>("email"));
@@ -95,7 +93,7 @@ public class Employees_Controller implements Initializable {
         try {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
-            String sql = "select MaNv,HoTen,NgaySinh,GioiTinh,MaChamCong,MaChucVu,Email,SoDienThoai from NhanVien";
+            String sql = "SELECT MANV,HOTEN,NGAYSINH,GIOITINH,MACHAMCONG,MACHUCVU,EMAIL,SODIENTHOAI FROM NHANVIEN WHERE ISDELETED = 2";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
@@ -103,7 +101,7 @@ public class Employees_Controller implements Initializable {
                         rs.getString("maNV"),
                         rs.getString("HoTen"),
                         rs.getString("ngaysinh"),
-                        rs.getBoolean("gioitinh"),
+                        rs.getString("gioitinh"),
                         rs.getString("machamcong"),
                         rs.getString("machucvu"),
                         rs.getString("email"),
@@ -125,19 +123,52 @@ public class Employees_Controller implements Initializable {
             ex.printStackTrace();
         }
     }
+    public void executeStoredProc(String exec){
+        Connected_Controller connect = new Connected_Controller();
+        Connection con = connect.getConnection();
+        CallableStatement callableStatement;
+        try {
+            callableStatement = con.prepareCall(exec);
+            callableStatement.executeQuery();
+            ResultSet rs = callableStatement.executeQuery();
+        }catch (Exception e){
+            System.out.println("Oke"); // ko trả về result nên báo lỗi
+        }
+    }
 
     public void insertValueEmployees() {
-        String s = null;
+        String gioiTinh = null;
         if(rdbNam.isSelected()){
-            s = "false";
+            gioiTinh = "Nam";
         }
         if(rdbNu.isSelected()){
-            s = "true";
+            gioiTinh = "Nữ";
         }
-        //ddd
+        String tenChucVu = null;
+        String taikhoan = null;
+        String matkhau = null;
+        if(txtMaChucVu.getText().toUpperCase().equalsIgnoreCase("QL")){
+            tenChucVu = "Quản Lý";
+            taikhoan = "admin";
+            matkhau = "12345";
+        }else{
+            taikhoan = "null";
+            matkhau = "null";
+        }
+        if(txtMaChucVu.getText().toUpperCase().equalsIgnoreCase("NV")){
+            tenChucVu = "Nhân viên";
+            taikhoan = "null";
+            matkhau = "null";
+        }
+        if(txtMaChucVu.getText().toUpperCase().equalsIgnoreCase("BV")){
+            tenChucVu = "Bảo vệ";
+            taikhoan = "null";
+            matkhau = "null";
+        }
         if (validate() == true) {
-            String sql = "insert into NhanVien values ('"+txtMaNV.getText()+"',N'"+txtTenNV.getText()+"','"+txtNgaySinh.getText()+"','"+ s +"','"+txtMaChamCong.getText()+"','"+txtMaChucVu.getText()+"','"+txtEmail.getText()+"','"+txtSdt.getText()+"',2)";
-            executeQuery(sql);
+//            String sql = "INSERT INTO NHANVIEN VALUES('"+txtMaNV.getText().toUpperCase()+"','"+txtMaChamCong.getText()+"','"+txtMaChucVu.getText().toUpperCase()+"',N'"+txtTenNV.getText()+"','"+txtNgaySinh.getText()+"',N'"+ s +"','"+txtEmail.getText()+"','"+txtSdt.getText()+"',2)";
+            String exec = "{call ADD_CHUCVU('"+txtMaNV.getText().toUpperCase()+"','"+txtMaChamCong.getText()+"','"+txtMaChucVu.getText().toUpperCase()+"',N'"+txtTenNV.getText()+"','"+txtNgaySinh.getText()+"',N'"+gioiTinh+"','"+txtEmail.getText()+"','"+txtSdt.getText()+"',N'"+tenChucVu+"','"+taikhoan+"','"+matkhau+"',2)}";
+            executeStoredProc(exec);
             System.out.println("them thanh cong");
             listM.clear();
             try {
@@ -152,7 +183,7 @@ public class Employees_Controller implements Initializable {
                             rs.getString("maNV"),
                             rs.getString("HoTen"),
                             rs.getString("ngaysinh"),
-                            rs.getBoolean("gioitinh"),
+                            rs.getString("gioitinh"),
                             rs.getString("machamcong"),
                             rs.getString("machucvu"),
                             rs.getString("email"),
@@ -222,7 +253,7 @@ public class Employees_Controller implements Initializable {
     }
 
     public void deleteData() {
-        String sql = "UPDATE NhanVien SET isDeleted = 3 where maNv = '" + txtMaNV.getText() + "'";
+        String sql = "UPDATE NHANVIEN SET ISDELETED = 3 WHERE MANV = '" + txtMaNV.getText() + "'";
         executeQuery(sql);
         lblThongBao.setText("Xóa thành công");
         listM.clear();
@@ -230,7 +261,7 @@ public class Employees_Controller implements Initializable {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
 
-            String query = "SELECT MaNv,HoTen,NgaySinh,GioiTinh,MaChamCong,MaChucVu,Email,SoDienThoai FROM NhanVien where isDeleted=2 ";
+            String query = "SELECT MANV,HOTEN,NGAYSINH,GIOITINH,MACHAMCONG,MACHUCVU,EMAIL,SODIENTHOAI FROM NHANVIEN WHERE ISDELETED = 2";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
@@ -238,7 +269,7 @@ public class Employees_Controller implements Initializable {
                         rs.getString("maNV"),
                         rs.getString("HoTen"),
                         rs.getString("ngaysinh"),
-                        rs.getBoolean("gioitinh"),
+                        rs.getString("gioitinh"),
                         rs.getString("machamcong"),
                         rs.getString("machucvu"),
                         rs.getString("email"),
@@ -279,7 +310,7 @@ public class Employees_Controller implements Initializable {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
 
-            String query = "SELECT MaNv,HoTen,NgaySinh,GioiTinh,MaChamCong,MaChucVu,Email,SoDienThoai FROM NhanVien where isDeleted=2 ";
+            String query = "SELECT MANV,HOTEN,NGAYSINH,GIOITINH,MACHAMCONG,MACHUCVU,EMAIL,SODIENTHOAI FROM NHANVIEN WHERE ISDELETED = 2";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
@@ -287,7 +318,7 @@ public class Employees_Controller implements Initializable {
                         rs.getString("maNV"),
                         rs.getString("HoTen"),
                         rs.getString("ngaysinh"),
-                        rs.getBoolean("gioitinh"),
+                        rs.getString("gioitinh"),
                         rs.getString("machamcong"),
                         rs.getString("machucvu"),
                         rs.getString("email"),

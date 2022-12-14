@@ -74,7 +74,7 @@ public class Product_Controller implements Initializable {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
 
-            String sql = "SELECT MaSanPham,TenSanPham,NgayNhapHang,NgayHetHan,SoLuong,Dongia FROM SanPham where isDeleted=2 ";
+            String sql = "SELECT MASANPHAM,TENSANPHAM,NGAYNHAPHANG,NGAYHETHAN,SOLUONG,DONGIA FROM SANPHAM WHERE ISDELETED=2";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
@@ -93,7 +93,7 @@ public class Product_Controller implements Initializable {
     }
     public void insertValueproduct() {
         if(validate() == true){
-            String sql = "INSERT INTO SanPham VALUES ('" + txtid.getText() + "','" + txtname.getText() + "','" + txtday.getText() + "','"  + txtdat.getText() +"','" + txtslot.getText() +"','" + txtcost.getText() +"'"+ "2)";
+            String sql = "INSERT INTO SANPHAM VALUES ('"+txtid.getText().toUpperCase()+"','"+txtname.getText()+"','"+txtday.getText()+"','"+txtdat.getText()+"',"+txtslot.getText()+",'"+txtcost.getText()+"',2)";
             executeQuery(sql);
             System.out.println("them thanh cong");
             list.clear();
@@ -101,7 +101,7 @@ public class Product_Controller implements Initializable {
                 Connected_Controller connected_controller = new Connected_Controller();
                 Connection connection1 = connected_controller.getConnection();
 
-                String query = "SELECT MaSanPham,TenSanPham,NgayNhapHang,NgayHetHan,SoLuong,Dongia FROM SanPham where isDeleted=2  ";
+                String query = "SELECT MASANPHAM,TENSANPHAM,NGAYNHAPHANG,NGAYHETHAN,SOLUONG,DONGIA FROM SANPHAM WHERE ISDELETED=2";
                 Statement statement = connection1.createStatement();
                 ResultSet rs = statement.executeQuery(query);
                 while (rs.next()) {
@@ -147,7 +147,7 @@ public class Product_Controller implements Initializable {
         return true;
     }
     public void deleteData() {
-        String sql = "UPDATE SanPham SET isDeleted = 3 where MaSanPham = '" + txtid.getText() + "'";
+        String sql = "UPDATE SanPham SET ISDELETED = 3 where MASANPHAM = '"+ txtid.getText() +"'";
         executeQuery(sql);
         lblTB.setText("Xóa thành công");
         list.clear();
@@ -155,7 +155,7 @@ public class Product_Controller implements Initializable {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection = connected_controller.getConnection();
 
-            String query = "SELECT MaSanPham,TenSanPham,NgayNhapHang,NgayHetHan,SoLuong,Dongia FROM SanPham where isDeleted=2 ";
+            String query = "SELECT MASANPHAM,TENSANPHAM,NGAYNHAPHANG,NGAYHETHAN,SOLUONG,DONGIA FROM SANPHAM WHERE ISDELETED=2";
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
@@ -183,7 +183,7 @@ public class Product_Controller implements Initializable {
 
     }
     public void executeUpdate(){
-        String sql = "update SanPham set TenSanPham=N'"+txtname.getText()+"'"+" where MaSanPham ='"+txtid.getText()+"'";
+        String sql = "update SanPham set TenSanPham=N'"+txtname.getText()+"' "+" where MaSanPham ='"+txtid.getText()+"'";
         executeQuery(sql);
         lblTB.setText("Cập nhật  thành công");
         list.clear();
@@ -191,7 +191,7 @@ public class Product_Controller implements Initializable {
             Connected_Controller connected_controller = new Connected_Controller();
             Connection connection1 = connected_controller.getConnection();
 
-            String query = "SELECT MaSanPham,TenSanPham,NgayNhapHang,NgayHetHan,SoLuong,Dongia FROM SanPham where isDeleted=2";
+            String query = "SELECT MASANPHAM,TENSANPHAM,NGAYNHAPHANG,NGAYHETHAN,SOLUONG,DONGIA FROM SANPHAM WHERE ISDELETED=2";
             Statement statement = connection1.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {

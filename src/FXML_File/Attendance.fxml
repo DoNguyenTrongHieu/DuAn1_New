@@ -30,18 +30,19 @@
             </Button>
             <Label id="labelTitle" layoutX="349.0" layoutY="30.0" stylesheets="@../Css/Attendance.css" text="Attendance" />
             <Label layoutX="116.0" layoutY="140.0" text="Attendance Id" />
-            <TextField layoutX="116.0" layoutY="161.0" prefHeight="27.0" prefWidth="221.0" styleClass="text-field" stylesheets="@../Css/Attendance.css" />
-            <Button layoutX="200.0" layoutY="208.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="53.0" text="Enter" textFill="WHITE" />
+            <TextField fx:id="txtAttendance" layoutX="116.0" layoutY="161.0" prefHeight="27.0" prefWidth="221.0" styleClass="text-field" stylesheets="@../Css/Attendance.css" />
+            <Button layoutX="200.0" layoutY="208.0" mnemonicParsing="false" onAction="#insertChamCong" prefHeight="32.0" prefWidth="53.0" text="Enter" textFill="WHITE" />
             <TextField layoutX="116.0" layoutY="306.0" prefHeight="27.0" prefWidth="521.0" styleClass="text-field" stylesheets="@../Css/Attendance.css" />
             <Label layoutX="116.0" layoutY="285.0" text="Name" />
             <Label layoutX="116.0" layoutY="340.0" text="Role" />
             <TextField layoutX="116.0" layoutY="361.0" prefHeight="27.0" prefWidth="521.0" styleClass="text-field" stylesheets="@../Css/Attendance.css" />
             <TableView fx:id="tblAttendance" layoutY="463.0" prefHeight="298.0" prefWidth="876.0">
               <columns>
-                <TableColumn fx:id="attendanceID" prefWidth="131.99999392032623" resizable="false" text="Attendance ID" />
-                <TableColumn fx:id="name" prefWidth="384.79998779296875" resizable="false" text="Name" />
-                  <TableColumn fx:id="role" minWidth="0.0" prefWidth="152.800048828125" resizable="false" text="Role" />
-                  <TableColumn fx:id="MaNhanVien" prefWidth="207.2000732421875" resizable="false" text="EmployeesID" />
+                <TableColumn fx:id="ID" prefWidth="140.0" resizable="false" text="ID" />
+                <TableColumn fx:id="StaffID" prefWidth="154.0" resizable="false" text="Staff ID" />
+                  <TableColumn fx:id="StaffName" minWidth="0.0" prefWidth="219.0" resizable="false" text="StaffName" />
+                  <TableColumn fx:id="TimeIn" prefWidth="111.0" resizable="false" text="Time In" />
+                  <TableColumn fx:id="DateIn" prefWidth="251.0" resizable="false" text="Date In" />
               </columns>
             </TableView>
          </children>

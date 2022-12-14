@@ -1,19 +1,39 @@
 package DAO_Enity;
 
 public class Attendance_DAO {
+        private int Id;
+        private String maNhanVien;
         private String maChamCong;
         private String hoTen;
-        private String MaNhanVien;
-        private String chucVu;
+        private String ngayCham;
+        private String thoiGianCham;
 
-    public Attendance_DAO() {
+    public Attendance_DAO () {
     }
 
-    public Attendance_DAO(String maChamCong, String hoTen, String MaNhanVien, String chucVu) {
+    public Attendance_DAO(int id, String maNhanVien, String maChamCong, String hoTen, String ngayCham, String thoiGianCham) {
+        Id = id;
+        this.maNhanVien = maNhanVien;
         this.maChamCong = maChamCong;
         this.hoTen = hoTen;
-        this.MaNhanVien = MaNhanVien;
-        this.chucVu = chucVu;
+        this.ngayCham = ngayCham;
+        this.thoiGianCham = thoiGianCham;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
+
+    public String getMaNhanVien() {
+        return maNhanVien;
+    }
+
+    public void setMaNhanVien(String maNhanVien) {
+        this.maNhanVien = maNhanVien;
     }
 
     public String getMaChamCong() {
@@ -32,19 +52,19 @@ public class Attendance_DAO {
         this.hoTen = hoTen;
     }
 
-    public String getMaNhanVien() {
-        return MaNhanVien;
+    public String getNgayCham() {
+        return ngayCham;
     }
 
-    public void setMaNhanVien(String MaNhanVien) {
-        this.MaNhanVien = MaNhanVien;
+    public void setNgayCham(String ngayCham) {
+        this.ngayCham = ngayCham;
     }
 
-    public String getChucVu() {
-        return chucVu;
+    public String getThoiGianCham() {
+        return thoiGianCham;
     }
 
-    public void setChucVu(String chucVu) {
-        this.chucVu = chucVu;
+    public void setThoiGianCham(String thoiGianCham) {
+        this.thoiGianCham = thoiGianCham;
     }
 }

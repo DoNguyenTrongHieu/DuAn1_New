@@ -42,13 +42,13 @@
             <RadioButton fx:id="rdbNu" layoutX="187.0" layoutY="333.0" mnemonicParsing="false" text="Famale" toggleGroup="$gioiTinh" />
             <TableView fx:id="table" layoutY="436.0" onMouseClicked="#selectedID" prefHeight="324.0" prefWidth="876.0">
               <columns>
-                <TableColumn fx:id="maNVColumn" prefWidth="92.79998934268951" resizable="false" text="Staff ID" />
-                <TableColumn fx:id="tenNVColumn" prefWidth="127.99999237060547" resizable="false" text="Staff name" />
-                  <TableColumn fx:id="ngaysinhColumn" prefWidth="130.4000244140625" resizable="false" text="Date of birth" />
-                  <TableColumn fx:id="gioiTinhColumn" prefWidth="67.99993896484375" resizable="false" text="Sex" />
-                  <TableColumn fx:id="maChamCongColumn" prefWidth="114.0" resizable="false" text="Attendance ID" />
-                  <TableColumn fx:id="maChucVuColumn" prefWidth="77.0" resizable="false" text="Role ID" />
-                  <TableColumn fx:id="emailColumn" prefWidth="142.0" resizable="false" text="Email" />
+                <TableColumn fx:id="maNVColumn" prefWidth="81.0" resizable="false" text="Staff ID" />
+                <TableColumn fx:id="tenNVColumn" prefWidth="173.0" resizable="false" text="Staff name" />
+                  <TableColumn fx:id="ngaysinhColumn" prefWidth="114.0" resizable="false" text="Date of birth" />
+                  <TableColumn fx:id="gioiTinhColumn" prefWidth="76.0" resizable="false" text="Sex" />
+                  <TableColumn fx:id="maChamCongColumn" prefWidth="109.0" resizable="false" text="Attendance ID" />
+                  <TableColumn fx:id="maChucVuColumn" prefWidth="64.0" resizable="false" text="Role ID" />
+                  <TableColumn fx:id="emailColumn" prefWidth="136.0" resizable="false" text="Email" />
                   <TableColumn fx:id="sdtColumn" prefWidth="119.199951171875" resizable="false" text="Phone number" />
               </columns>
                <columnResizePolicy>
