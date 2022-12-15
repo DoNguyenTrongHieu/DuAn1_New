@@ -31,14 +31,8 @@ public class Order_Controller {
         acPane.getChildren().setAll(anchorPane);
     }
     public void changebutton(ActionEvent e) throws IOException {
-        Stage stage = (Stage)((Node) e.getSource()).getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../FXML_File/DeTails.fxml"));
-        Parent  view= loader.load();
-        Scene sc= new Scene(view);
-        Pay_Controller or = loader.getController();
-
-        stage.setScene(sc);
+        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../FXML_File/DeTails.fxml"));
+        acPane.getChildren().setAll(anchorPane);
     }
 
 }

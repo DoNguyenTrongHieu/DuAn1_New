@@ -1,72 +1,79 @@
 package DAO_Enity;
 
 public class Salary_DAO {
-    private String MaVaiTro;
-    private float luongCoBan;
-    private float luongPhuCap;
-    private int ngayCong;
-    private int ngayCongChuan;
-    private float tongLuong;
-
+    private int soThuTu;
+    private String maNhanVien;
+    private String luongCoBan;
+    private String luongPhuCap;
+    private String ngayCongChuan;
+    private String ngayCongThucTe;
+    private String tongLuong;
     public Salary_DAO() {
     }
 
-    public Salary_DAO( String MaVaiTro, float luongCoBan, float luongPhuCap,int ngayCong, int ngayCongChuan, float tongLuong) {
-
-        this.MaVaiTro = MaVaiTro;
+    public Salary_DAO(int soThuTu, String maNhanVien, String luongCoBan, String luongPhuCap, String ngayCongChuan, String ngayCongThucTe,String tongLuong) {
+        this.soThuTu = soThuTu;
+        this.maNhanVien = maNhanVien;
         this.luongCoBan = luongCoBan;
         this.luongPhuCap = luongPhuCap;
-        this.ngayCong = ngayCong;
         this.ngayCongChuan = ngayCongChuan;
+        this.ngayCongThucTe = ngayCongThucTe;
         this.tongLuong = tongLuong;
     }
 
-
-    public String getMaVaiTro() {
-        return MaVaiTro;
+    public int getSoThuTu() {
+        return soThuTu;
     }
 
-    public void setMaVaiTro(String MaVaiTro) {
-        this.MaVaiTro = MaVaiTro;
+    public void setSoThuTu(int soThuTu) {
+        this.soThuTu = soThuTu;
     }
 
-    public float getLuongCoBan() {
+    public String getMaNhanVien() {
+        return maNhanVien;
+    }
+
+    public void setMaNhanVien(String maNhanVien) {
+        this.maNhanVien = maNhanVien;
+    }
+
+    public String getLuongCoBan() {
         return luongCoBan;
     }
 
-    public void setLuongCoBan(float luongCoBan) {
+    public void setLuongCoBan(String luongCoBan) {
         this.luongCoBan = luongCoBan;
     }
 
-    public float getLuongPhuCap() {
+    public String getLuongPhuCap() {
         return luongPhuCap;
     }
 
-    public void setLuongPhuCap(float luongPhuCap) {
+    public void setLuongPhuCap(String luongPhuCap) {
         this.luongPhuCap = luongPhuCap;
     }
 
-    public int getNgayCongChuan() {
+    public String getNgayCongChuan() {
         return ngayCongChuan;
     }
 
-    public void setNgayCongChuan(int ngayCongChuan) {
+    public void setNgayCongChuan(String ngayCongChuan) {
         this.ngayCongChuan = ngayCongChuan;
     }
 
-    public float getTongLuong() {
+    public String getNgayCongThucTe() {
+        return ngayCongThucTe;
+    }
+
+    public void setNgayCongThucTe(String ngayCongThucTe) {
+        this.ngayCongThucTe = ngayCongThucTe;
+    }
+
+    public String getTongLuong() {
         return tongLuong;
     }
 
-    public void setTongLuong(float tongLuong) {
+    public void setTongLuong(String tongLuong) {
         this.tongLuong = tongLuong;
-    }
-
-    public int getNgayCong() {
-        return ngayCong;
-    }
-
-    public void setNgayCong(int ngayCong) {
-        this.ngayCong = ngayCong;
     }
 }

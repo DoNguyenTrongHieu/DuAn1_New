@@ -26,28 +26,29 @@ import java.util.ResourceBundle;
 
 public class Salary_Controller implements Initializable {
 
-
     @FXML
     private TableView<Salary_DAO> tblModel;
 
     @FXML
-    private TableColumn<Salary_DAO, String> MaVaiTro;
+    private TableColumn<Salary_DAO, Integer> ID;
 
     @FXML
-    private TableColumn<Salary_DAO, Float> basicSalary;
+    private TableColumn<Salary_DAO, String> tenNhanVien;
 
     @FXML
-    private TableColumn<Salary_DAO, Float> salary;
+    private TableColumn<Salary_DAO, String> basicSalary;
+
+    @FXML
+    private TableColumn<Salary_DAO, String> subsidiesSalary;
+
+    @FXML
+    private TableColumn<Salary_DAO, Integer> workday;
 
     @FXML
     private TableColumn<Salary_DAO, Integer> standard_working_day;
 
     @FXML
-    private TableColumn<Salary_DAO, Float> subsidiesSalary;
-
-    @FXML
-    private TableColumn<Salary_DAO, Integer> workday;
-
+    private TableColumn<Salary_DAO, String> salary;
 
     @FXML
     public void exit(ActionEvent event){
@@ -70,36 +71,37 @@ public class Salary_Controller implements Initializable {
     }
 
     public void showSalaryList(){
-        MaVaiTro.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("MaVaiTro"));
-        basicSalary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Float>("luongCoBan"));
-        subsidiesSalary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Float>("luongPhuCap"));
-        workday.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Integer>("ngayCong"));
+        ID.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Integer>("soThuTu"));
+        tenNhanVien.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("maNhanVien"));
+        basicSalary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("luongCoBan"));
+        subsidiesSalary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("luongPhuCap"));
         standard_working_day.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Integer>("ngayCongChuan"));
-        salary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Float>("tongLuong"));
-
+        workday.setCellValueFactory(new PropertyValueFactory<Salary_DAO,Integer>("ngayCongThucTe"));
+        salary.setCellValueFactory(new PropertyValueFactory<Salary_DAO,String>("tongLuong"));
         tblModel.setItems(salaryList);
-        try {
-            Connected_Controller connected_controller = new Connected_Controller();
-            Connection connection1 = connected_controller.getConnection();
-
-            String sql = "SELECT MaVaiTro,luongcoban,luongphucap,ngaycongchuan,ngaycong,tongluong FROM luong";
-            Statement statement = connection1.createStatement();
-            ResultSet rs = statement.executeQuery(sql);
-            while (rs.next()) {
-                salaryList.add(new Salary_DAO(
-                    rs.getString("MaVaiTro"),
-                    rs.getFloat("luongcoban"),
-                    rs.getFloat("luongphucap"),
-                    rs.getInt("ngaycong"),
-                    rs.getInt("ngaycongchuan"),
-                    rs.getFloat("tongluong")
-                ));
-
-            }
-            tblModel.setItems(salaryList);
-        } catch (Exception e) {
-e.printStackTrace();
-        }
+//        try {
+//            Connected_Controller connected_controller = new Connected_Controller();
+//            Connection connection1 = connected_controller.getConnection();
+//
+//            String sql = "SELECT MaVaiTro,luongcoban,luongphucap,ngaycongchuan,ngaycong,tongluong FROM luong";
+//            Statement statement = connection1.createStatement();
+//            ResultSet rs = statement.executeQuery(sql);
+//            while (rs.next()) {
+//                salaryList.add(new Salary_DAO(
+//                    rs.getInt("SOTHUTU"),
+//                        rs.getString("MANHANVIEN"),
+//                        rs.getString("LUONGCOBAN"),
+//                        rs.getString("LUONGPHUCAP"),
+//                        rs.getString("NGAYCONGCHUAN"),
+//                        rs.getString("NGAYCONGTHUCTE"),
+////                        rs.
+//                ));
+//
+//            }
+//            tblModel.setItems(salaryList);
+//        } catch (Exception e) {
+//e.printStackTrace();
+//        }
 
     }
     @FXML

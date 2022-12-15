@@ -32,12 +32,13 @@
             </Button>
             <TableView fx:id="tblModel" layoutY="368.0" prefHeight="392.0" prefWidth="876.0">
               <columns>
-                <TableColumn fx:id="MaVaiTro" editable="false" prefWidth="74.0" text="Role" />
-                  <TableColumn fx:id="basicSalary" editable="false" prefWidth="206.99999237060547" text="Basic Salary" />
-                  <TableColumn fx:id="subsidiesSalary" editable="false" prefWidth="174.0" text="Subsidies salary" />
-                  <TableColumn fx:id="workday" editable="false" prefWidth="108.0" text="Workday" />
-                  <TableColumn fx:id="standard_working_day" editable="false" prefWidth="172.0" text="Standard working day" />
-                  <TableColumn fx:id="salary" editable="false" prefWidth="140.0" text="Salary" />
+                <TableColumn fx:id="ID" editable="false" prefWidth="74.0" resizable="false" text="ID" />
+                  <TableColumn fx:id="tenNhanVien" prefWidth="185.99999237060547" resizable="false" text="Employees name" />
+                  <TableColumn fx:id="basicSalary" editable="false" prefWidth="104.0" resizable="false" text="Basic Salary" />
+                  <TableColumn fx:id="subsidiesSalary" editable="false" prefWidth="137.0" resizable="false" text="Subsidies salary" />
+                  <TableColumn fx:id="workday" editable="false" prefWidth="92.0" resizable="false" text="Workday" />
+                  <TableColumn fx:id="standard_working_day" editable="false" prefWidth="173.0" resizable="false" text="Standard working day" />
+                  <TableColumn fx:id="salary" editable="false" prefWidth="109.0" resizable="false" text="Salary" />
               </columns>
             </TableView>
             <TextField layoutX="36.0" layoutY="86.0" promptText="Employees ID" />
