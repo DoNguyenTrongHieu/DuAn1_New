@@ -1,35 +1,37 @@
 package DAO_Enity;
 
 public class Details_DAO {
-    private int STT ;
-    private String maHoaDon;
-    private String maKhachHang;
-    private String maNhanVienXuat;
-    private String thoiGianXuat;
-    private String ngayXuat;
-    private String tenSanPham;
-    private int soLuongSanPham;
-    private float tongGia;
-    private String trangThai;
-    private String sdt;
-    private float thanhTien;
+    private int STT;
+    private String MaHoaDon;
+    private String MaSanPham;
+    private String MaKhachHang;
+    private String MaNhanVienXuatHoaDon;
+    private String ThoiGianXuat;
+    private String NgayXuat;
+    private String TenSanPham;
+    private int SoLuongSanPham;
+    private float TongGiaTungSanPham;
+    private String TrangThai;
+    private String SoDienThoai;
+    private float ThanhTien;
 
-    public Details_DAO(String stt, String maHoaDon, String maSanPham, String maKhachHang, String maNhanVienXuatHoaDon, String thoiGianXuat, String ngayXuat, String tenSanPham, int soLuongSanPham, float tongGiaTungSanPham, String trangThai, String soDienThoai, float thanhTien) {
+    public Details_DAO() {
     }
 
-    public Details_DAO(int STT, String maHoaDon, String maKhachHang, String maNhanVienXuat, String thoiGianXuat, String ngayXuat, String tenSanPham, int soLuongSanPham, float tongGia, String trangThai, String sdt, float thanhTien) {
+    public Details_DAO(int STT, String maHoaDon, String maSanPham, String maKhachHang, String maNhanVienXuatHoaDon, String thoiGianXuat, String ngayXuat, String tenSanPham, int soLuongSanPham, float tongGiaTungSanPham, String trangThai, String soDienThoai, float thanhTien) {
         this.STT = STT;
-        this.maHoaDon = maHoaDon;
-        this.maKhachHang = maKhachHang;
-        this.maNhanVienXuat = maNhanVienXuat;
-        this.thoiGianXuat = thoiGianXuat;
-        this.ngayXuat = ngayXuat;
-        this.tenSanPham = tenSanPham;
-        this.soLuongSanPham = soLuongSanPham;
-        this.tongGia = tongGia;
-        this.trangThai = trangThai;
-        this.sdt = sdt;
-        this.thanhTien = thanhTien;
+        MaHoaDon = maHoaDon;
+        MaSanPham = maSanPham;
+        MaKhachHang = maKhachHang;
+        MaNhanVienXuatHoaDon = maNhanVienXuatHoaDon;
+        ThoiGianXuat = thoiGianXuat;
+        NgayXuat = ngayXuat;
+        TenSanPham = tenSanPham;
+        SoLuongSanPham = soLuongSanPham;
+        TongGiaTungSanPham = tongGiaTungSanPham;
+        TrangThai = trangThai;
+        SoDienThoai = soDienThoai;
+        ThanhTien = thanhTien;
     }
 
     public int getSTT() {
@@ -41,90 +43,98 @@ public class Details_DAO {
     }
 
     public String getMaHoaDon() {
-        return maHoaDon;
+        return MaHoaDon;
     }
 
     public void setMaHoaDon(String maHoaDon) {
-        this.maHoaDon = maHoaDon;
+        MaHoaDon = maHoaDon;
+    }
+
+    public String getMaSanPham() {
+        return MaSanPham;
+    }
+
+    public void setMaSanPham(String maSanPham) {
+        MaSanPham = maSanPham;
     }
 
     public String getMaKhachHang() {
-        return maKhachHang;
+        return MaKhachHang;
     }
 
     public void setMaKhachHang(String maKhachHang) {
-        this.maKhachHang = maKhachHang;
+        MaKhachHang = maKhachHang;
     }
 
-    public String getMaNhanVienXuat() {
-        return maNhanVienXuat;
+    public String getMaNhanVienXuatHoaDon() {
+        return MaNhanVienXuatHoaDon;
     }
 
-    public void setMaNhanVienXuat(String maNhanVienXuat) {
-        this.maNhanVienXuat = maNhanVienXuat;
+    public void setMaNhanVienXuatHoaDon(String maNhanVienXuatHoaDon) {
+        MaNhanVienXuatHoaDon = maNhanVienXuatHoaDon;
     }
 
     public String getThoiGianXuat() {
-        return thoiGianXuat;
+        return ThoiGianXuat;
     }
 
     public void setThoiGianXuat(String thoiGianXuat) {
-        this.thoiGianXuat = thoiGianXuat;
+        ThoiGianXuat = thoiGianXuat;
     }
 
     public String getNgayXuat() {
-        return ngayXuat;
+        return NgayXuat;
     }
 
     public void setNgayXuat(String ngayXuat) {
-        this.ngayXuat = ngayXuat;
+        NgayXuat = ngayXuat;
     }
 
     public String getTenSanPham() {
-        return tenSanPham;
+        return TenSanPham;
     }
 
     public void setTenSanPham(String tenSanPham) {
-        this.tenSanPham = tenSanPham;
+        TenSanPham = tenSanPham;
     }
 
     public int getSoLuongSanPham() {
-        return soLuongSanPham;
+        return SoLuongSanPham;
     }
 
     public void setSoLuongSanPham(int soLuongSanPham) {
-        this.soLuongSanPham = soLuongSanPham;
+        SoLuongSanPham = soLuongSanPham;
     }
 
-    public float getTongGia() {
-        return tongGia;
+    public float getTongGiaTungSanPham() {
+        return TongGiaTungSanPham;
     }
 
-    public void setTongGia(float tongGia) {
-        this.tongGia = tongGia;
+    public void setTongGiaTungSanPham(float tongGiaTungSanPham) {
+        TongGiaTungSanPham = tongGiaTungSanPham;
     }
 
     public String getTrangThai() {
-        return trangThai;
+        return TrangThai;
     }
 
     public void setTrangThai(String trangThai) {
-        this.trangThai = trangThai;
+        TrangThai = trangThai;
     }
 
-    public String getSdt() {
-        return sdt;
+    public String getSoDienThoai() {
+        return SoDienThoai;
     }
 
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
+    public void setSoDienThoai(String soDienThoai) {
+        SoDienThoai = soDienThoai;
     }
 
     public float getThanhTien() {
-        return thanhTien;
+        return ThanhTien;
     }
 
     public void setThanhTien(float thanhTien) {
-        this.thanhTien = thanhTien;
+        ThanhTien = thanhTien;
     }
 }

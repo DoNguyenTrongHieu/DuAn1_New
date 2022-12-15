@@ -11,6 +11,11 @@ public class product_DAO {
     public product_DAO() {
     }
 
+    public product_DAO(String tenSanPham, Float dongia) {
+        TenSanPham = tenSanPham;
+        Dongia = dongia;
+    }
+
     public product_DAO(String maSanPham, String tenSanPham, String ngayNhapHang, String ngayHetHan, int soLuong, Float dongia) {
         MaSanPham = maSanPham;
         TenSanPham = tenSanPham;

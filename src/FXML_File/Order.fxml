@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
@@ -9,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane fx:id="acPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Order_Controller">
+<AnchorPane fx:id="acPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Order_Controller">
    <children>
       <Pane id="paneContain" prefHeight="760.0" prefWidth="876.0" stylesheets="@../Css/Order.css">
          <children>
@@ -36,15 +40,11 @@
                </styleClass>
             </Button>
             <Button fx:id="btnde" layoutX="585.0" layoutY="715.0" mnemonicParsing="false" onAction="#changebutton" prefHeight="31.0" prefWidth="193.0" text="deltails" />
-            <TableView layoutY="152.0" prefHeight="546.0" prefWidth="876.0">
+            <TableView fx:id="tblModel" layoutY="152.0" prefHeight="546.0" prefWidth="876.0">
               <columns>
-                <TableColumn prefWidth="529.0" text="C1" />
-                <TableColumn prefWidth="130.0" text="C2" />
-                  <TableColumn prefWidth="216.0" text="Column X">
-                     <graphic>
-                        <Button mnemonicParsing="false" text="Button" />
-                     </graphic>
-                  </TableColumn>
+                <TableColumn fx:id="Productname" prefWidth="468.0" text="Tên Sản Phẩm " />
+                <TableColumn fx:id="Unitprice" prefWidth="241.0" text="Giá " />
+                  <TableColumn prefWidth="166.0" text="số lượng" />
               </columns>
             </TableView>
          </children>

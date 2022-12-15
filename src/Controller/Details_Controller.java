@@ -1,8 +1,7 @@
 package Controller;
 
-import DAO_Enity.Customer_DAO;
+
 import DAO_Enity.Details_DAO;
-import DAO_Enity.product_DAO;
 import JDBC_Controller.Connected_Controller;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -82,7 +81,7 @@ public class Details_Controller implements Initializable {
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 list.add(new Details_DAO(
-                        rs.getString("STT"),
+                        rs.getInt("STT"),
                         rs.getString("MaHoaDon"),
                         rs.getString("MaSanPham"),
                         rs.getString("MaKhachHang"),
