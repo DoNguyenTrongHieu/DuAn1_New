@@ -7,10 +7,10 @@ public class Connected_Controller {
 
 
     public static Connection getConnection() {
-        String serverName = "NEKOY";
+        String serverName = "KHOALE\\SQLEXPRESS";
         String databaseName = "QUANLYTIEMBANH";
-        String databaseUsername = "sa";
-        String databasePassword = "123";
+        String databaseUsername = "wibu";
+        String databasePassword = "123456";
         String url = "jdbc:sqlserver://" + serverName + ":1433;DatabaseName=" + databaseName + ";encrypt=true;trustServerCertificate=true";
 
         try {

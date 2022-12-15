@@ -183,7 +183,7 @@ public class Product_Controller implements Initializable {
 
     }
     public void executeUpdate(){
-        String sql = "update SanPham set TenSanPham=N'"+txtname.getText()+"' "+" where MaSanPham ='"+txtid.getText()+"'";
+        String sql = "update SanPham set MaSanPham = '"+ txtid.getText()+"' ,TenSanPham=N'"+txtname.getText()+"', NgayNhapHang = '"+txtday.getText()+"', NgayHetHan = '"+txtdat.getText()+"', SoLuong = '"+ txtslot.getText()+"', dongia = '"+ txtcost.getText()+"' "+" where MaSanPham ='"+txtid.getText()+"'";
         executeQuery(sql);
         lblTB.setText("Cập nhật  thành công");
         list.clear();
