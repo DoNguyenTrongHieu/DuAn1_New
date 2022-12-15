@@ -53,10 +53,10 @@ public class Order_Controller implements Initializable {
         AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../FXML_File/Pay.fxml"));
         acPane.getChildren().setAll(anchorPane);
     }
-    public void changebutton(ActionEvent e) throws IOException {
-        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../FXML_File/DeTails.fxml"));
-        acPane.getChildren().setAll(anchorPane);
-    }
+//    public void changebutton(ActionEvent e) throws IOException {
+//        AnchorPane anchorPane = FXMLLoader.load(getClass().getResource("../FXML_File/DeTails.fxml"));
+//        acPane.getChildren().setAll(anchorPane);
+//    }
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // hiển thị dự liệu lên table
         fillproduct();
