@@ -39,14 +39,15 @@
                   <String fx:value="exit" />
                </styleClass>
             </Button>
-            <Button fx:id="btnde" layoutX="585.0" layoutY="715.0" mnemonicParsing="false" onAction="#changebutton" prefHeight="31.0" prefWidth="193.0" text="deltails" />
-            <TableView fx:id="tblModel" layoutY="152.0" prefHeight="546.0" prefWidth="876.0">
+            <TableView fx:id="tblModel" layoutY="236.0" onMouseClicked="#selectedID" prefHeight="462.0" prefWidth="876.0">
               <columns>
                 <TableColumn fx:id="Productname" prefWidth="468.0" text="Tên Sản Phẩm " />
                 <TableColumn fx:id="Unitprice" prefWidth="241.0" text="Giá " />
-                  <TableColumn prefWidth="166.0" text="số lượng" />
+                  <TableColumn fx:id="slot" prefWidth="166.0" text="số lượng" />
               </columns>
             </TableView>
+            <Button layoutX="427.0" layoutY="161.0" mnemonicParsing="false" onAction="#executeUpdate" prefHeight="31.0" prefWidth="80.0" text="ADD" />
+            <TextField fx:id="txtid" layoutX="52.0" layoutY="161.0" prefHeight="27.0" prefWidth="338.0" />
          </children>
       </Pane>
    </children>
